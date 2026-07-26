@@ -118,8 +118,8 @@ button { font: inherit; cursor: pointer; }
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(rgba(1, 52, 91, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(1, 52, 91, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(1, 52, 91, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(1, 52, 91, 0.13) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 90%);
 }
