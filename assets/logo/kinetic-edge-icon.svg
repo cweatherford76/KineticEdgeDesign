@@ -1,13 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="kinetic-edge-g" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#53ecec"/>
       <stop offset="100%" stop-color="#01345b"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="14" fill="#ffffff"/>
   <g transform="translate(-8.9, 2.5)">
-    <path d="M20 12 L20 52 L27 52 L27 34 L42 52 L51 52 L33 30.5 L50 12 L41.5 12 L27 28 L27 12 Z" fill="url(#g)"/>
+    <path d="M20 12 L20 52 L27 52 L27 34 L42 52 L51 52 L33 30.5 L50 12 L41.5 12 L27 28 L27 12 Z" fill="url(#kinetic-edge-g)"/>
     <path d="M52.5 13.5 L59.5 7 L61.8 9.1 L54.8 15.8 Z" fill="#ffdb2b"/>
   </g>
 </svg>
