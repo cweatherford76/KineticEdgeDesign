@@ -7,16 +7,16 @@
   --bg-alt: #f1f6ff;
   --surface: #ffffff;
   --surface-2: #f4f8ff;
-  --border: rgba(20, 23, 31, 0.10);
-  --border-strong: rgba(20, 23, 31, 0.22);
+  --border: rgba(26, 39, 50, 0.10);
+  --border-strong: rgba(26, 39, 50, 0.22);
 
-  --text: #14171f;
+  --text: #1a2732;
   --text-muted: #4b5563;
   --text-faint: #78828e;
 
-  --blue: #1e88ff;
-  --navy: #14171f;
-  --navy-hover: #262c3d;
+  --blue: #009cfe;
+  --navy: #1a2732;
+  --navy-hover: #2e4256;
   --yellow: #ffdb2b;
   --gradient: linear-gradient(135deg, var(--blue), var(--navy));
 
@@ -24,7 +24,7 @@
   --radius-md: 16px;
   --radius-lg: 24px;
 
-  --shadow-glow: 0 0 0 1px rgba(20, 23, 31, 0.06), 0 20px 45px -20px rgba(20, 23, 31, 0.20);
+  --shadow-glow: 0 0 0 1px rgba(26, 39, 50, 0.06), 0 20px 45px -20px rgba(26, 39, 50, 0.20);
 
   --container-w: 1180px;
   --header-h: 76px;
@@ -81,7 +81,7 @@ button { font: inherit; cursor: pointer; }
 .text-gradient {
   position: relative;
   color: var(--navy);
-  background-image: linear-gradient(180deg, transparent 60%, rgba(30, 136, 255, 0.5) 60%, rgba(30, 136, 255, 0.5) 90%, transparent 90%);
+  background-image: linear-gradient(180deg, transparent 60%, rgba(0, 156, 254, 0.5) 60%, rgba(0, 156, 254, 0.5) 90%, transparent 90%);
   background-repeat: no-repeat;
   padding: 0 2px;
 }
@@ -94,7 +94,7 @@ button { font: inherit; cursor: pointer; }
   padding: 9px 18px 9px 14px;
   border-radius: 999px;
   border: 1px solid var(--border-strong);
-  background: rgba(30, 136, 255, 0.08);
+  background: rgba(0, 156, 254, 0.08);
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-muted);
@@ -157,7 +157,7 @@ button { font: inherit; cursor: pointer; }
   z-index: 999;
   border-radius: 0 0 8px 0;
   border: 1px solid var(--border-strong);
-  box-shadow: 0 8px 20px -8px rgba(20, 23, 31, 0.3);
+  box-shadow: 0 8px 20px -8px rgba(26, 39, 50, 0.3);
 }
 .skip-link:focus { left: 0; }
 
@@ -168,8 +168,8 @@ button { font: inherit; cursor: pointer; }
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(rgba(20, 23, 31, 0.13) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 23, 31, 0.13) 1px, transparent 1px);
+    linear-gradient(rgba(26, 39, 50, 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 39, 50, 0.13) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 90%);
 }
@@ -223,16 +223,10 @@ button { font: inherit; cursor: pointer; }
   flex-shrink: 0;
 }
 
-.brand-name {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-style: oblique 8deg;
-  font-size: 1.05rem;
-  color: var(--text);
-  white-space: nowrap;
+.brand-logo {
+  height: 34px;
+  width: auto;
 }
-.brand-name em { font-style: inherit; color: var(--text-muted); font-weight: 500; }
-.brand-name__edge { color: var(--blue); }
 
 .main-nav {
   display: flex;
@@ -310,16 +304,16 @@ button { font: inherit; cursor: pointer; }
 .btn--primary {
   background: var(--navy);
   color: #ffffff;
-  box-shadow: 0 10px 26px -10px rgba(20, 23, 31, 0.55);
+  box-shadow: 0 10px 26px -10px rgba(26, 39, 50, 0.55);
 }
-.btn--primary:hover { background: var(--navy-hover); transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(20, 23, 31, 0.5); }
+.btn--primary:hover { background: var(--navy-hover); transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(26, 39, 50, 0.5); }
 
 .btn--ghost {
-  background: rgba(20, 23, 31, 0.03);
+  background: rgba(26, 39, 50, 0.03);
   border-color: var(--border-strong);
   color: var(--text);
 }
-.btn--ghost:hover { background: rgba(20, 23, 31, 0.07); }
+.btn--ghost:hover { background: rgba(26, 39, 50, 0.07); }
 
 .btn--outline {
   background: transparent;
@@ -327,7 +321,7 @@ button { font: inherit; cursor: pointer; }
   color: var(--text);
   width: 100%;
 }
-.btn--outline:hover { border-color: var(--navy); background: rgba(30, 136, 255, 0.10); }
+.btn--outline:hover { border-color: var(--navy); background: rgba(0, 156, 254, 0.10); }
 
 .btn--sm { padding: 9px 18px; font-size: 0.85rem; }
 .btn--lg { padding: 16px 34px; font-size: 1rem; }
@@ -466,9 +460,9 @@ button { font: inherit; cursor: pointer; }
 }
 
 .price-card--featured {
-  border-color: rgba(20, 23, 31, 0.3);
-  background: linear-gradient(180deg, rgba(30, 136, 255, 0.14), var(--surface-2));
-  box-shadow: 0 0 0 1px rgba(30, 136, 255, 0.35), 0 24px 50px -28px rgba(20, 23, 31, 0.25);
+  border-color: rgba(26, 39, 50, 0.3);
+  background: linear-gradient(180deg, rgba(0, 156, 254, 0.14), var(--surface-2));
+  box-shadow: 0 0 0 1px rgba(0, 156, 254, 0.35), 0 24px 50px -28px rgba(26, 39, 50, 0.25);
 }
 
 .price-card__tag {
@@ -511,8 +505,8 @@ button { font: inherit; cursor: pointer; }
   left: 0; top: 6px;
   width: 14px; height: 14px;
   border-radius: 4px;
-  background: rgba(30, 136, 255, 0.22);
-  border: 1px solid rgba(20, 23, 31, 0.35);
+  background: rgba(0, 156, 254, 0.22);
+  border: 1px solid rgba(26, 39, 50, 0.35);
 }
 .feature-list li::after {
   content: "";
@@ -617,7 +611,7 @@ button { font: inherit; cursor: pointer; }
 
 .cta-banner {
   padding: 88px 0;
-  background: linear-gradient(135deg, rgba(30, 136, 255, 0.16), rgba(20, 23, 31, 0.05));
+  background: linear-gradient(135deg, rgba(0, 156, 254, 0.16), rgba(26, 39, 50, 0.05));
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -647,14 +641,14 @@ button { font: inherit; cursor: pointer; }
   padding: 32px;
   display: grid;
   gap: 18px;
-  box-shadow: 0 1px 3px rgba(20, 23, 31, 0.05);
+  box-shadow: 0 1px 3px rgba(26, 39, 50, 0.05);
 }
 .form-row { display: grid; gap: 8px; }
 .form-row label { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); }
 .form-row input,
 .form-row select,
 .form-row textarea {
-  background: rgba(20, 23, 31, 0.02);
+  background: rgba(26, 39, 50, 0.02);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
   color: var(--text);
@@ -670,7 +664,7 @@ button { font: inherit; cursor: pointer; }
   outline: none;
   border-color: var(--navy);
   background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(30, 136, 255, 0.35);
+  box-shadow: 0 0 0 3px rgba(0, 156, 254, 0.35);
 }
 .form-note { font-size: 0.78rem; color: var(--text-faint); text-align: center; margin: 0; }
 
@@ -687,6 +681,7 @@ button { font: inherit; cursor: pointer; }
   gap: 32px;
   align-items: start;
 }
+.footer-brand .brand-logo { height: 30px; }
 .footer-brand p { font-size: 0.9rem; margin-top: 10px; max-width: 260px; }
 .footer-nav { display: grid; gap: 12px; }
 .footer-nav a { font-size: 0.9rem; color: var(--text-muted); }
