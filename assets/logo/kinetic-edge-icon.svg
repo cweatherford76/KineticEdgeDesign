@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="kinetic-edge-g" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#53ecec"/>
-      <stop offset="100%" stop-color="#01345b"/>
+      <stop offset="0%" stop-color="#1e88ff"/>
+      <stop offset="100%" stop-color="#14171f"/>
     </linearGradient>
   </defs>
   <g transform="translate(-8.9, 2.5)">
