@@ -74,7 +74,9 @@ print).
   "basic monthly update," backup retention by hosting tier, and the
   precise limits on Premium's monthly updates/seasonal refreshes. Worth
   finalizing these with the client before launch.
-- **Contact form** (`index.html`, `#contact`): currently submits via
-  `mailto:info@kineticedge.design` since there's no backend yet. Swap for
-  a real form handler (Formspree, a Stripe-connected backend, etc.) once
-  hosting is chosen.
+- **Contact form** (`index.html`, `#contact`): submits to Formspree
+  (`https://formspree.io/f/mrenwkqw`) via `fetch` in `js/main.js`, so
+  visitors stay on the page and see an inline success/error message.
+  Includes a honeypot field (`_gotcha`) for basic spam filtering. Check
+  the Formspree dashboard for submissions and to adjust notification
+  email / spam settings.

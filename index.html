@@ -359,7 +359,7 @@
         </ul>
       </div>
 
-      <form class="contact-form reveal" id="contactForm" action="mailto:info@kineticedge.design" method="post" enctype="text/plain">
+      <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/mrenwkqw" method="post">
         <div class="form-row">
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required autocomplete="name">
@@ -385,8 +385,10 @@
           <label for="message">Tell us about your project</label>
           <textarea id="message" name="message" rows="4"></textarea>
         </div>
+        <input type="hidden" name="_subject" value="New inquiry from kineticedge.design">
+        <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button type="submit" class="btn btn--primary btn--full">Send Message</button>
-        <p class="form-note">Submitting opens your email client, addressed to info@kineticedge.design.</p>
+        <p class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
   </section>
