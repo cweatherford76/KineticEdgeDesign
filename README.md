@@ -75,6 +75,6 @@ print).
   precise limits on Premium's monthly updates/seasonal refreshes. Worth
   finalizing these with the client before launch.
 - **Contact form** (`index.html`, `#contact`): currently submits via
-  `mailto:hello@kineticedge.design` since there's no backend yet. Swap for
+  `mailto:info@kineticedge.design` since there's no backend yet. Swap for
   a real form handler (Formspree, a Stripe-connected backend, etc.) once
   hosting is chosen.
