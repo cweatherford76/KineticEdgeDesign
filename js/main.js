@@ -46,6 +46,29 @@
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Package detail dialogs
+  document.querySelectorAll('[data-dialog]').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var dialog = document.getElementById(trigger.getAttribute('data-dialog'));
+      if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+    });
+  });
+
+  document.querySelectorAll('.package-dialog').forEach(function (dialog) {
+    var closeBtn = dialog.querySelector('.package-dialog__close');
+    if (closeBtn) closeBtn.addEventListener('click', function () { dialog.close(); });
+
+    // Click on the backdrop (outside the dialog's own content box) closes it
+    dialog.addEventListener('click', function (event) {
+      if (event.target === dialog) dialog.close();
+    });
+
+    // Let in-dialog CTA links close the dialog before navigating to their anchor
+    dialog.querySelectorAll('a[href^="#"]').forEach(function (link) {
+      link.addEventListener('click', function () { dialog.close(); });
+    });
+  });
+
   // Contact form — submit via fetch so the visitor stays on the page
   // instead of being redirected to Formspree. Falls back to a normal
   // form POST (and Formspree's own redirect) if JS fails.

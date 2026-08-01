@@ -134,6 +134,7 @@
             <li>Ideal for personal brands, bios, resumes &amp; showcase sites</li>
           </ul>
           <a href="#contact" class="btn btn--outline">Start Here</a>
+          <button type="button" class="price-card__details" data-dialog="dialog-personal-site">View full details</button>
         </article>
 
         <article class="price-card reveal">
@@ -149,6 +150,7 @@
             <li>Basic contact info &amp; inquiry flow</li>
           </ul>
           <a href="#contact" class="btn btn--outline">Start Here</a>
+          <button type="button" class="price-card__details" data-dialog="dialog-basic">View full details</button>
         </article>
 
         <article class="price-card price-card--featured reveal">
@@ -165,6 +167,7 @@
             <li>Mobile-friendly layout</li>
           </ul>
           <a href="#contact" class="btn btn--primary">Start Here</a>
+          <button type="button" class="price-card__details" data-dialog="dialog-intermediate">View full details</button>
         </article>
 
         <article class="price-card reveal">
@@ -180,10 +183,72 @@
             <li>Customized build approach</li>
           </ul>
           <a href="#contact" class="btn btn--outline">Start Here</a>
+          <button type="button" class="price-card__details" data-dialog="dialog-advanced">View full details</button>
         </article>
 
       </div>
     </div>
+
+    <dialog class="package-dialog" id="dialog-personal-site">
+      <button type="button" class="package-dialog__close" aria-label="Close">&times;</button>
+      <p class="eyebrow">Website Design</p>
+      <h3>Personal Site</h3>
+      <p class="price"><span class="price-amount">$750</span></p>
+      <p class="package-dialog__desc">Best for profile pages, portfolio pages, and simple personal websites that only need a compact web presence.</p>
+      <ul class="feature-list">
+        <li>1&ndash;2 static pages</li>
+        <li>Mobile-friendly layout</li>
+        <li>No extra features or custom functionality</li>
+        <li>Ideal for personal brands, bios, resumes &amp; showcase sites</li>
+      </ul>
+      <p class="package-dialog__note">Pairs with the Personal hosting plan &mdash; and with any 12-month hosting commitment, this build is 50% off.</p>
+      <a href="#contact" class="btn btn--primary btn--full">Start Here</a>
+    </dialog>
+
+    <dialog class="package-dialog" id="dialog-basic">
+      <button type="button" class="package-dialog__close" aria-label="Close">&times;</button>
+      <p class="eyebrow">Website Design</p>
+      <h3>Basic</h3>
+      <p class="price"><span class="price-amount">$1,000</span></p>
+      <p class="package-dialog__desc">Best for small businesses that need a clean, professional website with a focused set of core pages.</p>
+      <ul class="feature-list">
+        <li>Static website architecture</li>
+        <li>Up to 5 core pages</li>
+        <li>Mobile-friendly layout</li>
+        <li>Basic contact info &amp; inquiry flow</li>
+      </ul>
+      <a href="#contact" class="btn btn--primary btn--full">Start Here</a>
+    </dialog>
+
+    <dialog class="package-dialog" id="dialog-intermediate">
+      <button type="button" class="package-dialog__close" aria-label="Close">&times;</button>
+      <p class="eyebrow">Website Design</p>
+      <h3>Intermediate <span class="package-dialog__tag">Most Popular</span></h3>
+      <p class="price"><span class="price-amount">$1,700</span></p>
+      <p class="package-dialog__desc">Best for businesses that need a larger site with stronger lead capture and more room to explain services.</p>
+      <ul class="feature-list">
+        <li>6&ndash;10 pages</li>
+        <li>Expanded site structure</li>
+        <li>Integrated custom forms</li>
+        <li>Mobile-friendly layout</li>
+      </ul>
+      <a href="#contact" class="btn btn--primary btn--full">Start Here</a>
+    </dialog>
+
+    <dialog class="package-dialog" id="dialog-advanced">
+      <button type="button" class="package-dialog__close" aria-label="Close">&times;</button>
+      <p class="eyebrow">Website Design</p>
+      <h3>Advanced</h3>
+      <p class="price"><span class="price-amount">Starting at $2,500</span></p>
+      <p class="package-dialog__desc">Best for businesses that need more tailored functionality or more complex integrations.</p>
+      <ul class="feature-list">
+        <li>5&ndash;10 pages</li>
+        <li>Premium custom functionality</li>
+        <li>More complex integrations</li>
+        <li>Customized build approach</li>
+      </ul>
+      <a href="#contact" class="btn btn--primary btn--full">Start Here</a>
+    </dialog>
   </section>
 
   <!-- HOSTING / SUPPORT -->
@@ -210,6 +275,7 @@
             <li>Response target: 3 business days</li>
           </ul>
           <a href="#contact" class="btn btn--outline">Get Hosted</a>
+          <button type="button" class="price-card__details" data-dialog="dialog-hosting-personal">View full details</button>
         </article>
 
         <article class="price-card price-card--featured reveal">
@@ -230,6 +296,7 @@
             <li>Response target: 1&ndash;3 business days</li>
           </ul>
           <a href="#contact" class="btn btn--primary">Get Hosted</a>
+          <button type="button" class="price-card__details" data-dialog="dialog-hosting-standard">View full details</button>
         </article>
 
         <article class="price-card reveal">
@@ -251,12 +318,70 @@
             <li>Seasonal content refreshes &amp; landing page swap-outs</li>
           </ul>
           <a href="#contact" class="btn btn--outline">Get Hosted</a>
+          <button type="button" class="price-card__details" data-dialog="dialog-hosting-premium">View full details</button>
         </article>
 
       </div>
 
       <p class="pricing-footnote reveal">Additional email addresses available for $10 per mailbox, per month, on any hosting plan.</p>
     </div>
+
+    <dialog class="package-dialog" id="dialog-hosting-personal">
+      <button type="button" class="package-dialog__close" aria-label="Close">&times;</button>
+      <p class="eyebrow">Managed Hosting</p>
+      <h3>Personal</h3>
+      <p class="price"><span class="price-amount">$50</span><span class="price-period">/month</span></p>
+      <p class="package-dialog__desc">Best for owners of a Personal Site plan who want hosting handled quietly in the background.</p>
+      <ul class="feature-list">
+        <li>Secure managed hosting for a Personal Site</li>
+        <li>Basic uptime &amp; deployment oversight</li>
+        <li>Minor text &amp; image updates</li>
+        <li>Response target: 3 business days</li>
+      </ul>
+      <a href="#contact" class="btn btn--primary btn--full">Get Hosted</a>
+    </dialog>
+
+    <dialog class="package-dialog" id="dialog-hosting-standard">
+      <button type="button" class="package-dialog__close" aria-label="Close">&times;</button>
+      <p class="eyebrow">Managed Hosting</p>
+      <h3>Standard <span class="package-dialog__tag">Most Popular</span></h3>
+      <p class="price"><span class="price-amount">$100</span><span class="price-period">/month</span></p>
+      <p class="package-dialog__desc">Best for growing businesses that want full hosting, monitoring, and day-to-day technical care handled for them.</p>
+      <ul class="feature-list">
+        <li>Secure managed hosting</li>
+        <li>Uptime monitoring with alerts</li>
+        <li>Managed SSL / certificate renewal</li>
+        <li>Routine backups</li>
+        <li>Domain &amp; DNS support</li>
+        <li>Up to 2 email addresses on your domain</li>
+        <li>Basic text &amp; image updates</li>
+        <li>Response target: 1&ndash;3 business days</li>
+      </ul>
+      <p class="package-dialog__note">Additional email addresses available for $10 per mailbox, per month.</p>
+      <a href="#contact" class="btn btn--primary btn--full">Get Hosted</a>
+    </dialog>
+
+    <dialog class="package-dialog" id="dialog-hosting-premium">
+      <button type="button" class="package-dialog__close" aria-label="Close">&times;</button>
+      <p class="eyebrow">Managed Hosting</p>
+      <h3>Premium</h3>
+      <p class="price"><span class="price-amount">$200</span><span class="price-period">/month</span></p>
+      <p class="package-dialog__desc">Best for businesses that want a hands-on partner — priority response, proactive care, and a standing monthly check-in.</p>
+      <ul class="feature-list">
+        <li>All Standard features</li>
+        <li>Proactive vulnerability patching</li>
+        <li>Up to 5 email addresses on your domain</li>
+        <li>Priority queue: same-day / 1 business day</li>
+        <li>Emergency issue triage</li>
+        <li>Monthly live virtual check-in</li>
+        <li>Up to 3 small content/design updates monthly</li>
+        <li>More frequent backups, longer retention</li>
+        <li>Oversight of existing third-party integrations</li>
+        <li>Seasonal content refreshes &amp; landing page swap-outs</li>
+      </ul>
+      <p class="package-dialog__note">Additional email addresses available for $10 per mailbox, per month.</p>
+      <a href="#contact" class="btn btn--primary btn--full">Get Hosted</a>
+    </dialog>
   </section>
 
   <!-- PROCESS -->
