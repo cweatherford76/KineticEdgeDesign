@@ -46,6 +46,42 @@
   var yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Light/dark theme toggle. The inline script in <head> already set
+  // data-theme before paint (reading localStorage or the OS preference),
+  // so this just wires up the click and keeps the icon/label in sync.
+  var themeToggle = document.getElementById('themeToggle');
+
+  if (themeToggle) {
+    var root = document.documentElement;
+
+    var syncToggleLabel = function () {
+      var isDark = root.getAttribute('data-theme') === 'dark';
+      themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    };
+    syncToggleLabel();
+
+    themeToggle.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      syncToggleLabel();
+    });
+
+    // If the visitor hasn't made an explicit choice, keep following the
+    // OS-level preference live (e.g. their system switches to dark at night).
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (event) {
+        var stored;
+        try { stored = localStorage.getItem('theme'); } catch (e) {}
+        if (!stored) {
+          root.setAttribute('data-theme', event.matches ? 'dark' : 'light');
+          syncToggleLabel();
+        }
+      });
+    }
+  }
+
   // Package detail dialogs
   document.querySelectorAll('[data-dialog]').forEach(function (trigger) {
     trigger.addEventListener('click', function () {

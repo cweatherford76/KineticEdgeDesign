@@ -7,6 +7,113 @@
   --bg-alt: #f1f6ff;
   --surface: #ffffff;
   --surface-2: #f4f8ff;
+
+  /* Raw channel values so component rules can vary opacity while still
+     flipping automatically with the theme (see the dark-mode blocks
+     below). --shadow-rgb and --scrim intentionally stay constant across
+     themes — cast shadows and modal scrims should stay dark regardless
+     of page theme. */
+  --navy-rgb: 26, 39, 50;
+  --blue-rgb: 0, 156, 254;
+  --yellow-rgb: 255, 219, 43;
+  --shadow-rgb: 26, 39, 50;
+
+  --border: rgba(var(--navy-rgb), 0.10);
+  --border-strong: rgba(var(--navy-rgb), 0.22);
+
+  --text: #1a2732;
+  --text-muted: #4b5563;
+  --text-faint: #78828e;
+
+  --blue: rgb(var(--blue-rgb));
+  --navy: rgb(var(--navy-rgb));
+  --yellow: rgb(var(--yellow-rgb));
+  --on-accent: #1a2732; /* always-dark text on yellow/light chips, in both themes */
+  --scrim: rgba(10, 13, 18, 0.5);
+
+  --header-bg: rgba(255, 255, 255, 0.78);
+  --mobile-nav-bg: rgba(255, 255, 255, 0.98);
+
+  --btn-primary-bg: var(--navy);
+  --btn-primary-bg-hover: #2e4256;
+  --btn-primary-text: #ffffff;
+
+  --gradient: linear-gradient(135deg, var(--blue), var(--navy));
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --shadow-glow: 0 0 0 1px rgba(var(--shadow-rgb), 0.06), 0 20px 45px -20px rgba(var(--shadow-rgb), 0.20);
+
+  --container-w: 1180px;
+  --header-h: 76px;
+
+  --ease: cubic-bezier(.16,.84,.44,1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0a0d12;
+    --bg-alt: #12161f;
+    --surface: #12161f;
+    --surface-2: #171c26;
+
+    --navy-rgb: 214, 222, 229;
+    --blue-rgb: 56, 178, 255;
+
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+
+    --text: #eef2f6;
+    --text-muted: #a7b1bc;
+    --text-faint: #7c8794;
+
+    --header-bg: rgba(10, 13, 18, 0.75);
+    --mobile-nav-bg: rgba(10, 13, 18, 0.97);
+
+    --btn-primary-bg: var(--blue);
+    --btn-primary-bg-hover: #5cc4ff;
+    --btn-primary-text: #0a0d12;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0a0d12;
+  --bg-alt: #12161f;
+  --surface: #12161f;
+  --surface-2: #171c26;
+
+  --navy-rgb: 214, 222, 229;
+  --blue-rgb: 56, 178, 255;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
+
+  --text: #eef2f6;
+  --text-muted: #a7b1bc;
+  --text-faint: #7c8794;
+
+  --header-bg: rgba(10, 13, 18, 0.75);
+  --mobile-nav-bg: rgba(10, 13, 18, 0.97);
+
+  --btn-primary-bg: var(--blue);
+  --btn-primary-bg-hover: #5cc4ff;
+  --btn-primary-text: #0a0d12;
+
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --bg-alt: #f1f6ff;
+  --surface: #ffffff;
+  --surface-2: #f4f8ff;
+
+  --navy-rgb: 26, 39, 50;
+  --blue-rgb: 0, 156, 254;
+
   --border: rgba(26, 39, 50, 0.10);
   --border-strong: rgba(26, 39, 50, 0.22);
 
@@ -14,22 +121,14 @@
   --text-muted: #4b5563;
   --text-faint: #78828e;
 
-  --blue: #009cfe;
-  --navy: #1a2732;
-  --navy-hover: #2e4256;
-  --yellow: #ffdb2b;
-  --gradient: linear-gradient(135deg, var(--blue), var(--navy));
+  --header-bg: rgba(255, 255, 255, 0.78);
+  --mobile-nav-bg: rgba(255, 255, 255, 0.98);
 
-  --radius-sm: 10px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
+  --btn-primary-bg: var(--navy);
+  --btn-primary-bg-hover: #2e4256;
+  --btn-primary-text: #ffffff;
 
-  --shadow-glow: 0 0 0 1px rgba(26, 39, 50, 0.06), 0 20px 45px -20px rgba(26, 39, 50, 0.20);
-
-  --container-w: 1180px;
-  --header-h: 76px;
-
-  --ease: cubic-bezier(.16,.84,.44,1);
+  color-scheme: light;
 }
 
 * , *::before, *::after { box-sizing: border-box; }
@@ -81,7 +180,7 @@ button { font: inherit; cursor: pointer; }
 .text-gradient {
   position: relative;
   color: var(--navy);
-  background-image: linear-gradient(180deg, transparent 60%, rgba(0, 156, 254, 0.5) 60%, rgba(0, 156, 254, 0.5) 90%, transparent 90%);
+  background-image: linear-gradient(180deg, transparent 60%, rgba(var(--blue-rgb), 0.5) 60%, rgba(var(--blue-rgb), 0.5) 90%, transparent 90%);
   background-repeat: no-repeat;
   padding: 0 2px;
 }
@@ -94,7 +193,7 @@ button { font: inherit; cursor: pointer; }
   padding: 9px 18px 9px 14px;
   border-radius: 999px;
   border: 1px solid var(--border-strong);
-  background: rgba(0, 156, 254, 0.08);
+  background: rgba(var(--blue-rgb), 0.08);
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--text-muted);
@@ -106,7 +205,7 @@ button { font: inherit; cursor: pointer; }
   height: 8px;
   border-radius: 50%;
   background: var(--yellow);
-  box-shadow: 0 0 0 4px rgba(255, 219, 43, 0.22);
+  box-shadow: 0 0 0 4px rgba(var(--yellow-rgb), 0.22);
   flex-shrink: 0;
 }
 .capacity-dot::after {
@@ -157,7 +256,7 @@ button { font: inherit; cursor: pointer; }
   z-index: 999;
   border-radius: 0 0 8px 0;
   border: 1px solid var(--border-strong);
-  box-shadow: 0 8px 20px -8px rgba(26, 39, 50, 0.3);
+  box-shadow: 0 8px 20px -8px rgba(var(--shadow-rgb), 0.3);
 }
 .skip-link:focus { left: 0; }
 
@@ -168,8 +267,8 @@ button { font: inherit; cursor: pointer; }
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(rgba(26, 39, 50, 0.13) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(26, 39, 50, 0.13) 1px, transparent 1px);
+    linear-gradient(rgba(var(--navy-rgb), 0.13) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--navy-rgb), 0.13) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 90%);
 }
@@ -203,7 +302,7 @@ button { font: inherit; cursor: pointer; }
   height: var(--header-h);
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.78);
+  background: var(--header-bg);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
@@ -226,6 +325,22 @@ button { font: inherit; cursor: pointer; }
 .brand-logo {
   height: 34px;
   width: auto;
+}
+
+/* The logo artwork is dark navy + blue on transparent, drawn for a
+   light backdrop. Give it its own light chip in dark mode so it stays
+   legible rather than blending into the dark header. */
+:root[data-theme="dark"] .brand-logo {
+  background: #ffffff;
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .brand-logo {
+    background: #ffffff;
+    padding: 6px 10px;
+    border-radius: 10px;
+  }
 }
 
 .main-nav {
@@ -284,6 +399,42 @@ button { font: inherit; cursor: pointer; }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
+/* Theme toggle — hidden until has-js confirms the click handler is
+   wired up, since it does nothing without JS. */
+.theme-toggle {
+  position: relative;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-muted);
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+html.has-js .theme-toggle { display: inline-flex; }
+.theme-toggle:hover { color: var(--text); border-color: var(--navy); }
+
+.theme-toggle__icon {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  transition: opacity 0.25s var(--ease), transform 0.35s var(--ease);
+}
+.theme-toggle__icon--sun { opacity: 0; transform: rotate(-60deg) scale(0.6); }
+.theme-toggle__icon--moon { opacity: 1; transform: rotate(0deg) scale(1); }
+
+:root[data-theme="dark"] .theme-toggle__icon--sun { opacity: 1; transform: rotate(0deg) scale(1); }
+:root[data-theme="dark"] .theme-toggle__icon--moon { opacity: 0; transform: rotate(60deg) scale(0.6); }
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle__icon { transition: opacity 0.15s linear; transform: none !important; }
+}
+
 /* ---------------- Buttons ---------------- */
 
 .btn {
@@ -302,18 +453,18 @@ button { font: inherit; cursor: pointer; }
 .btn:active { transform: translateY(1px); }
 
 .btn--primary {
-  background: var(--navy);
-  color: #ffffff;
-  box-shadow: 0 10px 26px -10px rgba(26, 39, 50, 0.55);
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  box-shadow: 0 10px 26px -10px rgba(var(--shadow-rgb), 0.55);
 }
-.btn--primary:hover { background: var(--navy-hover); transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(26, 39, 50, 0.5); }
+.btn--primary:hover { background: var(--btn-primary-bg-hover); transform: translateY(-2px); box-shadow: 0 14px 30px -10px rgba(var(--shadow-rgb), 0.5); }
 
 .btn--ghost {
-  background: rgba(26, 39, 50, 0.03);
+  background: rgba(var(--navy-rgb), 0.03);
   border-color: var(--border-strong);
   color: var(--text);
 }
-.btn--ghost:hover { background: rgba(26, 39, 50, 0.07); }
+.btn--ghost:hover { background: rgba(var(--navy-rgb), 0.07); }
 
 .btn--outline {
   background: transparent;
@@ -321,7 +472,7 @@ button { font: inherit; cursor: pointer; }
   color: var(--text);
   width: 100%;
 }
-.btn--outline:hover { border-color: var(--navy); background: rgba(0, 156, 254, 0.10); }
+.btn--outline:hover { border-color: var(--navy); background: rgba(var(--blue-rgb), 0.10); }
 
 .btn--sm { padding: 9px 18px; font-size: 0.85rem; }
 .btn--lg { padding: 16px 34px; font-size: 1rem; }
@@ -442,8 +593,8 @@ button { font: inherit; cursor: pointer; }
   margin: 20px auto 0;
   padding: 9px 18px 9px 14px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 219, 43, 0.5);
-  background: rgba(255, 219, 43, 0.14);
+  border: 1px solid rgba(var(--yellow-rgb), 0.5);
+  background: rgba(var(--yellow-rgb), 0.14);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text);
@@ -453,7 +604,7 @@ button { font: inherit; cursor: pointer; }
   height: 8px;
   border-radius: 50%;
   background: var(--yellow);
-  box-shadow: 0 0 0 4px rgba(255, 219, 43, 0.22);
+  box-shadow: 0 0 0 4px rgba(var(--yellow-rgb), 0.22);
   flex-shrink: 0;
 }
 
@@ -483,9 +634,9 @@ button { font: inherit; cursor: pointer; }
 }
 
 .price-card--featured {
-  border-color: rgba(26, 39, 50, 0.3);
-  background: linear-gradient(180deg, rgba(0, 156, 254, 0.14), var(--surface-2));
-  box-shadow: 0 0 0 1px rgba(0, 156, 254, 0.35), 0 24px 50px -28px rgba(26, 39, 50, 0.25);
+  border-color: rgba(var(--shadow-rgb), 0.3);
+  background: linear-gradient(180deg, rgba(var(--blue-rgb), 0.14), var(--surface-2));
+  box-shadow: 0 0 0 1px rgba(var(--blue-rgb), 0.35), 0 24px 50px -28px rgba(var(--shadow-rgb), 0.25);
 }
 
 .price-card__tag {
@@ -493,7 +644,7 @@ button { font: inherit; cursor: pointer; }
   top: -13px;
   left: 26px;
   background: var(--yellow);
-  color: var(--navy);
+  color: var(--on-accent);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -528,8 +679,8 @@ button { font: inherit; cursor: pointer; }
   left: 0; top: 6px;
   width: 14px; height: 14px;
   border-radius: 4px;
-  background: rgba(0, 156, 254, 0.22);
-  border: 1px solid rgba(26, 39, 50, 0.35);
+  background: rgba(var(--blue-rgb), 0.22);
+  border: 1px solid rgba(var(--navy-rgb), 0.35);
 }
 .feature-list li::after {
   content: "";
@@ -575,7 +726,7 @@ button { font: inherit; cursor: pointer; }
   border: none;
   border-radius: var(--radius-lg);
   background: var(--surface);
-  box-shadow: 0 30px 80px -20px rgba(26, 39, 50, 0.35);
+  box-shadow: 0 30px 80px -20px rgba(var(--navy-rgb), 0.35);
   color: var(--text);
   opacity: 0;
   transform: translateY(12px) scale(0.98);
@@ -590,7 +741,7 @@ button { font: inherit; cursor: pointer; }
   .package-dialog[open] { opacity: 0; transform: translateY(12px) scale(0.98); }
 }
 .package-dialog::backdrop {
-  background: rgba(26, 39, 50, 0.45);
+  background: var(--scrim);
   backdrop-filter: blur(2px);
   opacity: 0;
   transition: opacity 0.25s var(--ease), overlay 0.25s allow-discrete, display 0.25s allow-discrete;
@@ -635,7 +786,7 @@ button { font: inherit; cursor: pointer; }
   vertical-align: middle;
   margin-left: 8px;
   background: var(--yellow);
-  color: var(--navy);
+  color: var(--on-accent);
   font-size: 0.62rem;
   font-weight: 700;
   letter-spacing: 0.04em;
@@ -681,8 +832,8 @@ button { font: inherit; cursor: pointer; }
   font-family: 'Space Grotesk', sans-serif;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #ffffff;
-  background: var(--navy);
+  color: var(--btn-primary-text);
+  background: var(--btn-primary-bg);
   width: 34px; height: 34px;
   line-height: 34px;
   text-align: center;
@@ -724,7 +875,7 @@ button { font: inherit; cursor: pointer; }
 
 .cta-banner {
   padding: 88px 0;
-  background: linear-gradient(135deg, rgba(0, 156, 254, 0.16), rgba(26, 39, 50, 0.05));
+  background: linear-gradient(135deg, rgba(0, 156, 254, 0.16), rgba(var(--navy-rgb), 0.05));
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
@@ -754,14 +905,14 @@ button { font: inherit; cursor: pointer; }
   padding: 32px;
   display: grid;
   gap: 18px;
-  box-shadow: 0 1px 3px rgba(26, 39, 50, 0.05);
+  box-shadow: 0 1px 3px rgba(var(--navy-rgb), 0.05);
 }
 .form-row { display: grid; gap: 8px; }
 .form-row label { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); }
 .form-row input,
 .form-row select,
 .form-row textarea {
-  background: rgba(26, 39, 50, 0.02);
+  background: rgba(var(--navy-rgb), 0.02);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-sm);
   color: var(--text);
@@ -776,8 +927,8 @@ button { font: inherit; cursor: pointer; }
 .form-row textarea:focus {
   outline: none;
   border-color: var(--navy);
-  background: #ffffff;
-  box-shadow: 0 0 0 3px rgba(0, 156, 254, 0.35);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(var(--blue-rgb), 0.35);
 }
 .form-honeypot {
   position: absolute;
@@ -796,6 +947,13 @@ button { font: inherit; cursor: pointer; }
 .form-status[data-state="sending"] { color: var(--text-faint); }
 .form-status[data-state="success"] { color: #1a7f4b; }
 .form-status[data-state="error"] { color: #c22b2b; }
+
+:root[data-theme="dark"] .form-status[data-state="success"] { color: #4ade80; }
+:root[data-theme="dark"] .form-status[data-state="error"] { color: #f87171; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .form-status[data-state="success"] { color: #4ade80; }
+  :root:not([data-theme="light"]) .form-status[data-state="error"] { color: #f87171; }
+}
 
 .btn[disabled] { opacity: 0.65; pointer-events: none; }
 
@@ -864,7 +1022,7 @@ html.has-js .reveal.is-visible {
     position: absolute;
     top: var(--header-h);
     left: 0; right: 0;
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--mobile-nav-bg);
     backdrop-filter: blur(20px);
     flex-direction: column;
     gap: 0;

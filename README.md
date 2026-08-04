@@ -62,6 +62,18 @@ white/light backgrounds (the whole site) and the white-background version
 anywhere a flat backing is needed (email signatures, social profiles,
 print).
 
+### Light/dark mode
+
+The header includes a light/dark toggle. It defaults to the visitor's OS
+preference, remembers an explicit choice in `localStorage`, and an inline
+script in `<head>` applies it before first paint (no flash of the wrong
+theme). All color tokens live in `css/style.css`'s `:root` block and are
+re-defined for dark mode in three places: a `prefers-color-scheme: dark`
+media query (OS default), `:root[data-theme="dark"]`, and
+`:root[data-theme="light"]` (explicit overrides from the toggle). Add new
+colors as tokens there rather than hardcoding hex/rgba values in component
+rules, so they stay theme-aware automatically.
+
 ## Content that needs periodic upkeep
 
 - **Hero capacity badge** (`index.html`, marked `<!-- UPDATE PERIODICALLY -->`
