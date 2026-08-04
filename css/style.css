@@ -327,20 +327,17 @@ button { font: inherit; cursor: pointer; }
   width: auto;
 }
 
-/* The logo artwork is dark navy + blue on transparent, drawn for a
-   light backdrop. Give it its own light chip in dark mode so it stays
-   legible rather than blending into the dark header. */
-:root[data-theme="dark"] .brand-logo {
-  background: #ffffff;
-  padding: 6px 10px;
-  border-radius: 10px;
-}
+/* Two logo variants swap based on theme: the default artwork (dark navy
+   + blue) for light backgrounds, and a recolored light-ink version for
+   dark mode so it doesn't blend into a dark header. */
+.brand-logo--dark { display: none; }
+
+:root[data-theme="dark"] .brand-logo--light { display: none; }
+:root[data-theme="dark"] .brand-logo--dark { display: block; }
+
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .brand-logo {
-    background: #ffffff;
-    padding: 6px 10px;
-    border-radius: 10px;
-  }
+  :root:not([data-theme="light"]) .brand-logo--light { display: none; }
+  :root:not([data-theme="light"]) .brand-logo--dark { display: block; }
 }
 
 .main-nav {
