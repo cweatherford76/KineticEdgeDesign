@@ -150,11 +150,24 @@
 
   // Pre-fill the contact form's design/hosting package dropdowns from
   // whichever "Start Here" / "Get Hosted" CTA the visitor clicked,
-  // whether on the pricing card itself or inside its detail dialog. Each
-  // click only sets the matching dropdown, so picking a design package
-  // and then a hosting plan (or vice versa) fills in one of each.
+  // whether on the pricing card itself or inside its detail dialog.
+  // Picking a design package also preselects our recommended hosting
+  // tier for it (matches the pairing called out in each package's detail
+  // dialog); picking a hosting package only sets that field.
   var designPackageSelect = document.getElementById('design-package');
   var hostingPackageSelect = document.getElementById('hosting-package');
+
+  var recommendedHostingFor = {
+    'dialog-personal-site': 'dialog-hosting-personal',
+    'dialog-basic': 'dialog-hosting-standard',
+    'dialog-intermediate': 'dialog-hosting-premium',
+    'dialog-advanced': 'dialog-hosting-premium'
+  };
+
+  function setSelectByPackageId(select, packageId) {
+    var option = select && select.querySelector('option[data-package-id="' + packageId + '"]');
+    if (option) select.value = option.value;
+  }
 
   document.querySelectorAll('[data-dialog="dialog-contact"]').forEach(function (trigger) {
     trigger.addEventListener('click', function () {
@@ -162,11 +175,14 @@
       var packageId = source && (source.getAttribute('data-dialog-card') || source.id);
       if (!packageId) return;
 
-      var select = packageId.indexOf('dialog-hosting-') === 0 ? hostingPackageSelect : designPackageSelect;
-      if (!select) return;
+      if (packageId.indexOf('dialog-hosting-') === 0) {
+        setSelectByPackageId(hostingPackageSelect, packageId);
+        return;
+      }
 
-      var option = select.querySelector('option[data-package-id="' + packageId + '"]');
-      if (option) select.value = option.value;
+      setSelectByPackageId(designPackageSelect, packageId);
+      var recommended = recommendedHostingFor[packageId];
+      if (recommended) setSelectByPackageId(hostingPackageSelect, recommended);
     });
   });
 
