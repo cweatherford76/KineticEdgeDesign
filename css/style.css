@@ -882,6 +882,12 @@ html.has-js .theme-toggle { display: inline-flex; }
   color: var(--text-faint);
   margin-bottom: 20px;
 }
+.package-dialog__note a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 /* Lead-in caption sitting above a package's (merged) feature list,
    e.g. "Everything in Standard, plus". */
 .package-dialog__extra-label {
