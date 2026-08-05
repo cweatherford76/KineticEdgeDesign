@@ -7,9 +7,7 @@
   (function () {
     try {
       var stored = localStorage.getItem('theme');
-      var theme = stored === 'light' || stored === 'dark'
-        ? stored
-        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
       document.documentElement.setAttribute('data-theme', theme);
     } catch (e) {}
   })();
@@ -22,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260805-9">
+<link rel="stylesheet" href="css/style.css?v=20260805-10">
 </head>
 <body>
 
@@ -48,16 +46,17 @@
     </nav>
 
     <div class="header-actions">
-      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+      <a href="#contact" class="btn btn--primary btn--sm">Get Started</a>
+      <button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-checked="true" aria-label="Switch to light mode">
         <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4.5"/>
           <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
         </svg>
+        <span class="theme-toggle__thumb" aria-hidden="true"></span>
         <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/>
         </svg>
       </button>
-      <a href="#contact" class="btn btn--primary btn--sm">Get Started</a>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
         <span></span><span></span><span></span>
       </button>
@@ -629,6 +628,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260805-9"></script>
+<script src="js/main.js?v=20260805-10"></script>
 </body>
 </html>

@@ -396,40 +396,56 @@ button { font: inherit; cursor: pointer; }
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Theme toggle — hidden until has-js confirms the click handler is
-   wired up, since it does nothing without JS. */
+/* Theme toggle — an iOS-style switch, hidden until has-js confirms the
+   click handler is wired up, since it does nothing without JS. The
+   thumb slides from left (light) to right (dark, the default), with a
+   sun/moon icon fixed at each end of the track for context. */
 .theme-toggle {
   position: relative;
   display: none;
   align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
+  justify-content: space-between;
+  width: 52px;
+  height: 28px;
   flex-shrink: 0;
+  padding: 0 6px;
   border: 1px solid var(--border-strong);
-  border-radius: 8px;
-  background: transparent;
-  color: var(--text-muted);
-  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+  border-radius: 999px;
+  background: rgba(var(--navy-rgb), 0.05);
+  color: var(--text-faint);
+  transition: background 0.25s var(--ease), border-color 0.2s var(--ease);
 }
 html.has-js .theme-toggle { display: inline-flex; }
-.theme-toggle:hover { color: var(--text); border-color: var(--navy); }
+.theme-toggle:hover { border-color: var(--navy); }
+:root[data-theme="dark"] .theme-toggle { background: rgba(var(--blue-rgb), 0.25); }
 
 .theme-toggle__icon {
-  position: absolute;
-  width: 18px;
-  height: 18px;
+  position: relative;
+  z-index: 1;
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
   fill: currentColor;
-  transition: opacity 0.25s var(--ease), transform 0.35s var(--ease);
+  transition: color 0.25s var(--ease);
 }
-.theme-toggle__icon--sun { opacity: 0; transform: rotate(-60deg) scale(0.6); }
-.theme-toggle__icon--moon { opacity: 1; transform: rotate(0deg) scale(1); }
+:root[data-theme="dark"] .theme-toggle__icon--moon,
+:root[data-theme="light"] .theme-toggle__icon--sun { color: var(--text); }
 
-:root[data-theme="dark"] .theme-toggle__icon--sun { opacity: 1; transform: rotate(0deg) scale(1); }
-:root[data-theme="dark"] .theme-toggle__icon--moon { opacity: 0; transform: rotate(60deg) scale(0.6); }
+.theme-toggle__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 0 1px 4px rgba(var(--shadow-rgb), 0.45);
+  transition: transform 0.3s var(--ease);
+}
+:root[data-theme="dark"] .theme-toggle__thumb { transform: translateX(24px); }
 
 @media (prefers-reduced-motion: reduce) {
-  .theme-toggle__icon { transition: opacity 0.15s linear; transform: none !important; }
+  .theme-toggle__thumb { transition: none; }
 }
 
 /* ---------------- Buttons ---------------- */
