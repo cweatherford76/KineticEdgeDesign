@@ -1041,6 +1041,7 @@ html.has-js .theme-toggle { display: inline-flex; }
 }
 .form-row { display: grid; gap: 8px; }
 .form-row label { font-size: 0.85rem; font-weight: 500; color: var(--text-muted); }
+.form-hint { font-size: 0.8rem; color: var(--text-muted); margin: -2px 0 0; }
 .form-row input,
 .form-row select,
 .form-row textarea {

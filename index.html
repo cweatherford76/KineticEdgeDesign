@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260805-7">
+<link rel="stylesheet" href="css/style.css?v=20260805-8">
 </head>
 <body>
 
@@ -561,6 +561,24 @@
           <input type="text" id="business" name="business" autocomplete="organization">
         </div>
         <div class="form-row">
+          <label for="package">Package you're interested in</label>
+          <select id="package" name="package">
+            <option value="">Not sure yet</option>
+            <optgroup label="Website Design">
+              <option value="Personal Site (Website Design) &mdash; $750" data-package-id="dialog-personal-site">Personal Site &mdash; $750</option>
+              <option value="Basic (Website Design) &mdash; $1,000" data-package-id="dialog-basic">Basic &mdash; $1,000</option>
+              <option value="Intermediate (Website Design) &mdash; $1,700" data-package-id="dialog-intermediate">Intermediate &mdash; $1,700</option>
+              <option value="Advanced (Website Design) &mdash; Starting at $2,500" data-package-id="dialog-advanced">Advanced &mdash; Starting at $2,500</option>
+            </optgroup>
+            <optgroup label="Managed Hosting">
+              <option value="Personal (Managed Hosting) &mdash; $50/month" data-package-id="dialog-hosting-personal">Personal &mdash; $50/month</option>
+              <option value="Standard (Managed Hosting) &mdash; $100/month" data-package-id="dialog-hosting-standard">Standard &mdash; $100/month</option>
+              <option value="Premium (Managed Hosting) &mdash; $200/month" data-package-id="dialog-hosting-premium">Premium &mdash; $200/month</option>
+            </optgroup>
+          </select>
+          <p class="form-hint">Just a starting point for the conversation &mdash; not a commitment.</p>
+        </div>
+        <div class="form-row">
           <label for="interest">What are you interested in?</label>
           <select id="interest" name="interest">
             <option value="new-website">A new website</option>
@@ -607,6 +625,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260805-6"></script>
+<script src="js/main.js?v=20260805-7"></script>
 </body>
 </html>

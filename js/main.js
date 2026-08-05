@@ -116,6 +116,24 @@
     });
   });
 
+  // Pre-fill the contact form's package dropdown from whichever
+  // "Start Here" / "Get Hosted" CTA the visitor clicked, whether on the
+  // pricing card itself or inside its detail dialog.
+  var packageSelect = document.getElementById('package');
+
+  if (packageSelect) {
+    document.querySelectorAll('a[href="#contact"]').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var source = link.closest('[data-dialog-card], dialog.package-dialog');
+        var packageId = source && (source.getAttribute('data-dialog-card') || source.id);
+        if (!packageId) return;
+
+        var option = packageSelect.querySelector('option[data-package-id="' + packageId + '"]');
+        if (option) packageSelect.value = option.value;
+      });
+    });
+  }
+
   // Contact form — submit via fetch so the visitor stays on the page
   // instead of being redirected to Formspree. Falls back to a normal
   // form POST (and Formspree's own redirect) if JS fails.
