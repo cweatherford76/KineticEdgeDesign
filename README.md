@@ -46,6 +46,14 @@ Upload the repo contents (or point the host at this repo) to whatever
 static hosting is chosen. No server-side code, no environment variables,
 no build command required.
 
+**Cache-busting**: `css/style.css` and `js/main.js` are referenced in
+`index.html` with a `?v=YYYYMMDD` query string. Many hosts (and CDNs in
+front of them) cache static CSS/JS/images far more aggressively than
+HTML, so after deploying a CSS or JS change, bump that date so caches
+treat it as a new file — otherwise visitors (and you) may see new HTML
+paired with a stale stylesheet, which looks like layout bugs that
+aren't actually in the code anymore.
+
 ## Brand reference
 
 Colors are defined as CSS custom properties at the top of `css/style.css`:
