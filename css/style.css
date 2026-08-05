@@ -54,10 +54,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0a0d12;
-    --bg-alt: #12161f;
-    --surface: #12161f;
-    --surface-2: #171c26;
+    --bg: #1c2128;
+    --bg-alt: #22272f;
+    --surface: #101319;
+    --surface-2: #0c0e13;
 
     --navy-rgb: 214, 222, 229;
     --blue-rgb: 56, 178, 255;
@@ -69,8 +69,8 @@
     --text-muted: #a7b1bc;
     --text-faint: #7c8794;
 
-    --header-bg: rgba(10, 13, 18, 0.75);
-    --mobile-nav-bg: rgba(10, 13, 18, 0.97);
+    --header-bg: rgba(28, 33, 40, 0.75);
+    --mobile-nav-bg: rgba(28, 33, 40, 0.97);
 
     --btn-primary-bg: var(--blue);
     --btn-primary-bg-hover: #5cc4ff;
@@ -80,10 +80,10 @@
 }
 
 :root[data-theme="dark"] {
-  --bg: #0a0d12;
-  --bg-alt: #12161f;
-  --surface: #12161f;
-  --surface-2: #171c26;
+  --bg: #1c2128;
+  --bg-alt: #22272f;
+  --surface: #101319;
+  --surface-2: #0c0e13;
 
   --navy-rgb: 214, 222, 229;
   --blue-rgb: 56, 178, 255;
@@ -95,8 +95,8 @@
   --text-muted: #a7b1bc;
   --text-faint: #7c8794;
 
-  --header-bg: rgba(10, 13, 18, 0.75);
-  --mobile-nav-bg: rgba(10, 13, 18, 0.97);
+  --header-bg: rgba(28, 33, 40, 0.75);
+  --mobile-nav-bg: rgba(28, 33, 40, 0.97);
 
   --btn-primary-bg: var(--blue);
   --btn-primary-bg-hover: #5cc4ff;
