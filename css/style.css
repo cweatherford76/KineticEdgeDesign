@@ -605,31 +605,34 @@ html.has-js .theme-toggle { display: inline-flex; }
   flex-shrink: 0;
 }
 
+.hosting-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.hosting-intro .section-head {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
+
 /* The source graphic has its own white matte baked in (not a photo we
    can recolor), so it gets a deliberately light, fixed-background frame
    rather than the theme's surface token — it reads as an intentional
    framed panel in both themes instead of a stray white box in dark mode. */
 .hosting-showcase {
-  max-width: 560px;
-  margin: 0 auto 56px;
   padding: 20px;
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-glow);
-  text-align: center;
 }
 .hosting-showcase img {
   width: 100%;
   height: auto;
   border-radius: var(--radius-md);
-}
-.hosting-showcase__caption {
-  /* Fixed (not theme-based) color: this text sits on the card's
-     always-white background, regardless of page theme. */
-  margin: 16px 0 0;
-  font-size: 0.92rem;
-  color: #4b5563;
 }
 
 /* ---------------- Pricing cards ---------------- */
@@ -1038,7 +1041,9 @@ html.has-js .reveal.is-visible {
 
 @media (max-width: 900px) {
   .about-grid,
-  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .contact-grid,
+  .hosting-intro { grid-template-columns: 1fr; gap: 40px; }
+  .hosting-intro .section-head { text-align: center; }
 }
 
 @media (max-width: 780px) {
