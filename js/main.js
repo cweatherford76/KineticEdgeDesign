@@ -90,6 +90,17 @@
     });
   });
 
+  // Pricing cards: clicking anywhere on the card opens its detail dialog,
+  // except the CTA link and "View full details" button, which keep their
+  // own behavior (jumping to #contact, or opening the dialog themselves).
+  document.querySelectorAll('[data-dialog-card]').forEach(function (card) {
+    card.addEventListener('click', function (event) {
+      if (event.target.closest('a, button')) return;
+      var dialog = document.getElementById(card.getAttribute('data-dialog-card'));
+      if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+    });
+  });
+
   document.querySelectorAll('dialog').forEach(function (dialog) {
     var closeBtn = dialog.querySelector('.package-dialog__close, .image-dialog__close');
     if (closeBtn) closeBtn.addEventListener('click', function () { dialog.close(); });

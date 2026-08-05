@@ -730,9 +730,11 @@ html.has-js .theme-toggle { display: inline-flex; }
 }
 .price-card:hover {
   transform: translateY(-6px);
-  border-color: var(--border-strong);
+  border-color: var(--blue);
   box-shadow: var(--shadow-glow);
 }
+
+.price-card[data-dialog-card] { cursor: pointer; }
 
 .price-card--featured {
   border-color: rgba(var(--shadow-rgb), 0.3);
