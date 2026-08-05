@@ -94,6 +94,13 @@ rules, so they stay theme-aware automatically.
   "basic monthly update," backup retention by hosting tier, and the
   precise limits on Premium's monthly updates/seasonal refreshes. Worth
   finalizing these with the client before launch.
+- **Hosting package feature lists** (`index.html`, both the pricing-grid
+  cards and the matching `dialog-hosting-*` popups): Standard now
+  includes a quarterly live check-in in addition to its monthly response
+  time; Premium's uptime monitoring is worded "with notifications" (vs.
+  Standard's "with alerts") and its priority response time reads "same
+  business day." Keep the short pricing-card list and the full dialog
+  list in sync when either changes.
 - **Contact form** (`index.html`, `#contact`): submits to Formspree
   (`https://formspree.io/f/mrenwkqw`) via `fetch` in `js/main.js`, so
   visitors stay on the page and see an inline success/error message.
