@@ -918,6 +918,19 @@ html.has-js .theme-toggle { display: inline-flex; }
   .package-dialog, .package-dialog::backdrop { transition: none; }
 }
 
+/* Contact dialog: reuses .package-dialog chrome (sizing, close button,
+   open/close animation) but hosts the site's one contact form, moved
+   here by JS from its normal spot in the page's Contact section. */
+.contact-dialog {
+  width: min(520px, calc(100vw - 48px));
+}
+.contact-dialog .contact-form {
+  border: none;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+}
+
 /* ---------------- Process ---------------- */
 
 .process-grid {

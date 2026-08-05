@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260805-8">
+<link rel="stylesheet" href="css/style.css?v=20260805-9">
 </head>
 <body>
 
@@ -153,7 +153,7 @@
             <li>Mobile-friendly layout</li>
             <li>Ideal for personal brands, bios, resumes &amp; showcase sites</li>
           </ul>
-          <a href="#contact" class="btn btn--outline">Start Here</a>
+          <button type="button" class="btn btn--outline" data-dialog="dialog-contact">Start Here</button>
           <button type="button" class="price-card__details" data-dialog="dialog-personal-site">View full details</button>
         </article>
 
@@ -169,7 +169,7 @@
             <li>Mobile-friendly layout</li>
             <li>Basic contact info &amp; inquiry flow</li>
           </ul>
-          <a href="#contact" class="btn btn--outline">Start Here</a>
+          <button type="button" class="btn btn--outline" data-dialog="dialog-contact">Start Here</button>
           <button type="button" class="price-card__details" data-dialog="dialog-basic">View full details</button>
         </article>
 
@@ -186,7 +186,7 @@
             <li>Integrated custom forms</li>
             <li>Mobile-friendly layout</li>
           </ul>
-          <a href="#contact" class="btn btn--primary">Start Here</a>
+          <button type="button" class="btn btn--primary" data-dialog="dialog-contact">Start Here</button>
           <button type="button" class="price-card__details" data-dialog="dialog-intermediate">View full details</button>
         </article>
 
@@ -202,7 +202,7 @@
             <li>Database &amp; third-party integrations</li>
             <li>Customized build approach</li>
           </ul>
-          <a href="#contact" class="btn btn--outline">Start Here</a>
+          <button type="button" class="btn btn--outline" data-dialog="dialog-contact">Start Here</button>
           <button type="button" class="price-card__details" data-dialog="dialog-advanced">View full details</button>
         </article>
 
@@ -222,7 +222,7 @@
         <li>Mobile-first layout, tested across phone, tablet &amp; desktop</li>
       </ul>
       <p class="package-dialog__note">Pairs with the <a href="#hosting">Personal hosting</a> plan.</p>
-      <a href="#contact" class="btn btn--primary btn--full">Start Here</a>
+      <button type="button" class="btn btn--primary btn--full" data-dialog="dialog-contact">Start Here</button>
     </dialog>
 
     <dialog class="package-dialog" id="dialog-basic">
@@ -239,7 +239,7 @@
         <li>Optimized images for fast load times</li>
         <li>Basic on-page SEO setup (page titles &amp; descriptions)</li>
       </ul>
-      <a href="#contact" class="btn btn--primary btn--full">Start Here</a>
+      <button type="button" class="btn btn--primary btn--full" data-dialog="dialog-contact">Start Here</button>
     </dialog>
 
     <dialog class="package-dialog" id="dialog-intermediate">
@@ -261,7 +261,7 @@
         <li>Basic brand guideline (colors, fonts &amp; logo usage)</li>
       </ul>
       <p class="package-dialog__note">Recommended: pair with <a href="#hosting">Premium hosting</a> for priority support and hands-on care as your site grows.</p>
-      <a href="#contact" class="btn btn--primary btn--full">Start Here</a>
+      <button type="button" class="btn btn--primary btn--full" data-dialog="dialog-contact">Start Here</button>
     </dialog>
 
     <dialog class="package-dialog" id="dialog-advanced">
@@ -283,7 +283,7 @@
         <li>Comprehensive brand guideline (voice &amp; tone, extended palette, imagery style, usage examples)</li>
       </ul>
       <p class="package-dialog__note">Recommended: builds with custom integrations are best supported by <a href="#hosting">Premium hosting</a>, which includes ongoing oversight of your third-party integrations.</p>
-      <a href="#contact" class="btn btn--primary btn--full">Start Here</a>
+      <button type="button" class="btn btn--primary btn--full" data-dialog="dialog-contact">Start Here</button>
     </dialog>
   </section>
 
@@ -323,7 +323,7 @@
             <li>Minor text &amp; image updates</li>
             <li>Response time: 3 business days</li>
           </ul>
-          <a href="#contact" class="btn btn--outline">Get Hosted</a>
+          <button type="button" class="btn btn--outline" data-dialog="dialog-contact">Get Hosted</button>
           <button type="button" class="price-card__details" data-dialog="dialog-hosting-personal">View full details</button>
         </article>
 
@@ -344,7 +344,7 @@
             <li>Basic text &amp; image updates</li>
             <li>Response time: 1&ndash;3 business days</li>
           </ul>
-          <a href="#contact" class="btn btn--primary">Get Hosted</a>
+          <button type="button" class="btn btn--primary" data-dialog="dialog-contact">Get Hosted</button>
           <button type="button" class="price-card__details" data-dialog="dialog-hosting-standard">View full details</button>
         </article>
 
@@ -366,7 +366,7 @@
             <li>Oversight of existing third-party integrations</li>
             <li>Seasonal content refreshes &amp; landing page swap-outs</li>
           </ul>
-          <a href="#contact" class="btn btn--outline">Get Hosted</a>
+          <button type="button" class="btn btn--outline" data-dialog="dialog-contact">Get Hosted</button>
           <button type="button" class="price-card__details" data-dialog="dialog-hosting-premium">View full details</button>
         </article>
 
@@ -389,7 +389,7 @@
         <li>A direct point of contact &mdash; no ticket queues or chatbots</li>
         <li>Straightforward, hands-off hosting with nothing for you to maintain</li>
       </ul>
-      <a href="#contact" class="btn btn--primary btn--full">Get Hosted</a>
+      <button type="button" class="btn btn--primary btn--full" data-dialog="dialog-contact">Get Hosted</button>
     </dialog>
 
     <dialog class="package-dialog" id="dialog-hosting-standard">
@@ -413,7 +413,7 @@
         <li>A dependable partner who already knows your site when you reach out</li>
       </ul>
       <p class="package-dialog__note">Additional email addresses available for $10 per mailbox, per month.</p>
-      <a href="#contact" class="btn btn--primary btn--full">Get Hosted</a>
+      <button type="button" class="btn btn--primary btn--full" data-dialog="dialog-contact">Get Hosted</button>
     </dialog>
 
     <dialog class="package-dialog" id="dialog-hosting-premium">
@@ -440,7 +440,7 @@
       </ul>
       <p class="package-dialog__note">The recommended fit for Intermediate &amp; Advanced website builds, especially with the 50%-off design discount &mdash; those sites benefit most from Premium's priority support and integration oversight.</p>
       <p class="package-dialog__note">Additional email addresses available for $10 per mailbox, per month.</p>
-      <a href="#contact" class="btn btn--primary btn--full">Get Hosted</a>
+      <button type="button" class="btn btn--primary btn--full" data-dialog="dialog-contact">Get Hosted</button>
     </dialog>
   </section>
 
@@ -561,31 +561,24 @@
           <input type="text" id="business" name="business" autocomplete="organization">
         </div>
         <div class="form-row">
-          <label for="package">Package you're interested in</label>
-          <select id="package" name="package">
-            <option value="">Not sure yet</option>
-            <optgroup label="Website Design">
-              <option value="Personal Site (Website Design) &mdash; $750" data-package-id="dialog-personal-site">Personal Site &mdash; $750</option>
-              <option value="Basic (Website Design) &mdash; $1,000" data-package-id="dialog-basic">Basic &mdash; $1,000</option>
-              <option value="Intermediate (Website Design) &mdash; $1,700" data-package-id="dialog-intermediate">Intermediate &mdash; $1,700</option>
-              <option value="Advanced (Website Design) &mdash; Starting at $2,500" data-package-id="dialog-advanced">Advanced &mdash; Starting at $2,500</option>
-            </optgroup>
-            <optgroup label="Managed Hosting">
-              <option value="Personal (Managed Hosting) &mdash; $50/month" data-package-id="dialog-hosting-personal">Personal &mdash; $50/month</option>
-              <option value="Standard (Managed Hosting) &mdash; $100/month" data-package-id="dialog-hosting-standard">Standard &mdash; $100/month</option>
-              <option value="Premium (Managed Hosting) &mdash; $200/month" data-package-id="dialog-hosting-premium">Premium &mdash; $200/month</option>
-            </optgroup>
+          <label for="design-package">Website design package</label>
+          <select id="design-package" name="design_package">
+            <option value="">Not sure yet / N/A</option>
+            <option value="Personal Site &mdash; $750" data-package-id="dialog-personal-site">Personal Site &mdash; $750</option>
+            <option value="Basic &mdash; $1,000" data-package-id="dialog-basic">Basic &mdash; $1,000</option>
+            <option value="Intermediate &mdash; $1,700" data-package-id="dialog-intermediate">Intermediate &mdash; $1,700</option>
+            <option value="Advanced &mdash; Starting at $2,500" data-package-id="dialog-advanced">Advanced &mdash; Starting at $2,500</option>
           </select>
-          <p class="form-hint">Just a starting point for the conversation &mdash; not a commitment.</p>
         </div>
         <div class="form-row">
-          <label for="interest">What are you interested in?</label>
-          <select id="interest" name="interest">
-            <option value="new-website">A new website</option>
-            <option value="managed-hosting">Managed hosting for an existing site</option>
-            <option value="both">Both a new website and hosting</option>
-            <option value="not-sure">Not sure yet</option>
+          <label for="hosting-package">Hosting package</label>
+          <select id="hosting-package" name="hosting_package">
+            <option value="">Not sure yet / N/A</option>
+            <option value="Personal &mdash; $50/month" data-package-id="dialog-hosting-personal">Personal &mdash; $50/month</option>
+            <option value="Standard &mdash; $100/month" data-package-id="dialog-hosting-standard">Standard &mdash; $100/month</option>
+            <option value="Premium &mdash; $200/month" data-package-id="dialog-hosting-premium">Premium &mdash; $200/month</option>
           </select>
+          <p class="form-hint">Choose either, both, or neither &mdash; just a starting point, not a commitment.</p>
         </div>
         <div class="form-row">
           <label for="message">Tell us about your project</label>
@@ -598,6 +591,13 @@
       </form>
     </div>
   </section>
+
+  <dialog class="package-dialog contact-dialog" id="dialog-contact">
+    <button type="button" class="package-dialog__close" aria-label="Close">&times;</button>
+    <p class="eyebrow">Contact</p>
+    <h3>Let's talk about your project</h3>
+    <div class="contact-dialog__body"></div>
+  </dialog>
 
 </main>
 
@@ -625,6 +625,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20260805-7"></script>
+<script src="js/main.js?v=20260805-8"></script>
 </body>
 </html>

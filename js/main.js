@@ -82,17 +82,49 @@
     }
   }
 
+  // The site's one contact form gets relocated by JS: normally it sits
+  // inline in the page's Contact section, but package/hosting CTAs pop
+  // it into a floating dialog instead of jumping down the page. A
+  // comment node marks its original spot so it can be moved back on close.
+  var contactForm = document.getElementById('contactForm');
+  var contactDialog = document.getElementById('dialog-contact');
+  var contactDialogBody = contactDialog && contactDialog.querySelector('.contact-dialog__body');
+  var contactFormHome = contactForm && contactForm.parentNode;
+  var contactFormAnchor = document.createComment('contact-form-anchor');
+  if (contactForm) contactFormHome.insertBefore(contactFormAnchor, contactForm.nextSibling);
+
+  function openContactDialog() {
+    if (!contactDialog || !contactForm) return;
+    contactDialogBody.appendChild(contactForm);
+    contactDialog.showModal();
+  }
+
+  if (contactDialog) {
+    contactDialog.addEventListener('close', function () {
+      if (contactForm) contactFormHome.insertBefore(contactForm, contactFormAnchor);
+    });
+  }
+
   // Package detail dialogs + the hosting image lightbox
   document.querySelectorAll('[data-dialog]').forEach(function (trigger) {
     trigger.addEventListener('click', function () {
-      var dialog = document.getElementById(trigger.getAttribute('data-dialog'));
+      // If this trigger lives inside another open dialog (e.g. the "Get
+      // Hosted" CTA at the bottom of a package detail popup), close that
+      // one first rather than stacking dialogs.
+      var ancestorDialog = trigger.closest('dialog');
+      if (ancestorDialog && typeof ancestorDialog.close === 'function') ancestorDialog.close();
+
+      var targetId = trigger.getAttribute('data-dialog');
+      if (targetId === 'dialog-contact') { openContactDialog(); return; }
+
+      var dialog = document.getElementById(targetId);
       if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
     });
   });
 
   // Pricing cards: clicking anywhere on the card opens its detail dialog,
-  // except the CTA link and "View full details" button, which keep their
-  // own behavior (jumping to #contact, or opening the dialog themselves).
+  // except the CTA button and "View full details" button, which keep their
+  // own behavior (opening the contact dialog, or the detail dialog itself).
   document.querySelectorAll('[data-dialog-card]').forEach(function (card) {
     card.addEventListener('click', function (event) {
       if (event.target.closest('a, button')) return;
@@ -116,29 +148,31 @@
     });
   });
 
-  // Pre-fill the contact form's package dropdown from whichever
-  // "Start Here" / "Get Hosted" CTA the visitor clicked, whether on the
-  // pricing card itself or inside its detail dialog.
-  var packageSelect = document.getElementById('package');
+  // Pre-fill the contact form's design/hosting package dropdowns from
+  // whichever "Start Here" / "Get Hosted" CTA the visitor clicked,
+  // whether on the pricing card itself or inside its detail dialog. Each
+  // click only sets the matching dropdown, so picking a design package
+  // and then a hosting plan (or vice versa) fills in one of each.
+  var designPackageSelect = document.getElementById('design-package');
+  var hostingPackageSelect = document.getElementById('hosting-package');
 
-  if (packageSelect) {
-    document.querySelectorAll('a[href="#contact"]').forEach(function (link) {
-      link.addEventListener('click', function () {
-        var source = link.closest('[data-dialog-card], dialog.package-dialog');
-        var packageId = source && (source.getAttribute('data-dialog-card') || source.id);
-        if (!packageId) return;
+  document.querySelectorAll('[data-dialog="dialog-contact"]').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var source = trigger.closest('[data-dialog-card], dialog.package-dialog');
+      var packageId = source && (source.getAttribute('data-dialog-card') || source.id);
+      if (!packageId) return;
 
-        var option = packageSelect.querySelector('option[data-package-id="' + packageId + '"]');
-        if (option) packageSelect.value = option.value;
-      });
+      var select = packageId.indexOf('dialog-hosting-') === 0 ? hostingPackageSelect : designPackageSelect;
+      if (!select) return;
+
+      var option = select.querySelector('option[data-package-id="' + packageId + '"]');
+      if (option) select.value = option.value;
     });
-  }
+  });
 
   // Contact form — submit via fetch so the visitor stays on the page
   // instead of being redirected to Formspree. Falls back to a normal
   // form POST (and Formspree's own redirect) if JS fails.
-  var contactForm = document.getElementById('contactForm');
-
   if (contactForm) {
     var submitBtn = contactForm.querySelector('button[type="submit"]');
     var statusEl = contactForm.querySelector('.form-status');
