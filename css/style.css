@@ -892,6 +892,13 @@ html.has-js .theme-toggle { display: inline-flex; }
   padding-top: 18px;
   margin-bottom: 14px;
 }
+/* Used ahead of a (merged) feature list instead of as a divider
+   between two lists — no rule above it, just a lead-in caption. */
+.package-dialog__extra-label--lead {
+  border-top: none;
+  padding-top: 0;
+  margin-bottom: 10px;
+}
 .package-dialog .feature-list--extra { margin-bottom: 20px; }
 .package-dialog__tag {
   display: inline-block;
