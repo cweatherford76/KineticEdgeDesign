@@ -623,7 +623,9 @@ html.has-js .theme-toggle { display: inline-flex; }
    rather than the theme's surface token — it reads as an intentional
    framed panel in both themes instead of a stray white box in dark mode. */
 .hosting-showcase {
-  padding: 20px;
+  max-width: 380px;
+  justify-self: center;
+  padding: 16px;
   background: #ffffff;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -633,6 +635,78 @@ html.has-js .theme-toggle { display: inline-flex; }
   width: 100%;
   height: auto;
   border-radius: var(--radius-md);
+}
+
+.hosting-showcase__trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+}
+.hosting-showcase__trigger img { transition: opacity 0.2s var(--ease); }
+.hosting-showcase__trigger:hover img { opacity: 0.85; }
+
+/* Full-size image lightbox. Kept a fixed white background (like the
+   showcase frame) since the source graphic already has its own white
+   matte baked in — no separate border/seam between dialog and image. */
+.image-dialog {
+  width: min(90vw, 900px);
+  padding: 16px;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  box-shadow: 0 30px 80px -20px rgba(var(--shadow-rgb), 0.4);
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease),
+    overlay 0.25s allow-discrete, display 0.25s allow-discrete;
+}
+.image-dialog[open] { opacity: 1; transform: scale(1); }
+@starting-style {
+  .image-dialog[open] { opacity: 0; transform: scale(0.96); }
+}
+.image-dialog::backdrop {
+  background: var(--scrim);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.25s var(--ease), overlay 0.25s allow-discrete, display 0.25s allow-discrete;
+}
+.image-dialog[open]::backdrop { opacity: 1; }
+@starting-style {
+  .image-dialog[open]::backdrop { opacity: 0; }
+}
+.image-dialog img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(80vh, 700px);
+  object-fit: contain;
+  border-radius: var(--radius-md);
+}
+.image-dialog__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(26, 39, 50, 0.15);
+  background: #ffffff;
+  color: #4b5563;
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.image-dialog__close:hover { color: #1a2732; border-color: #1a2732; }
+
+@media (prefers-reduced-motion: reduce) {
+  .image-dialog, .image-dialog::backdrop { transition: none; }
 }
 
 /* ---------------- Pricing cards ---------------- */

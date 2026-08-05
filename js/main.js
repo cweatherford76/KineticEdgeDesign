@@ -82,7 +82,7 @@
     }
   }
 
-  // Package detail dialogs
+  // Package detail dialogs + the hosting image lightbox
   document.querySelectorAll('[data-dialog]').forEach(function (trigger) {
     trigger.addEventListener('click', function () {
       var dialog = document.getElementById(trigger.getAttribute('data-dialog'));
@@ -90,8 +90,8 @@
     });
   });
 
-  document.querySelectorAll('.package-dialog').forEach(function (dialog) {
-    var closeBtn = dialog.querySelector('.package-dialog__close');
+  document.querySelectorAll('dialog').forEach(function (dialog) {
+    var closeBtn = dialog.querySelector('.package-dialog__close, .image-dialog__close');
     if (closeBtn) closeBtn.addEventListener('click', function () { dialog.close(); });
 
     // Click on the backdrop (outside the dialog's own content box) closes it

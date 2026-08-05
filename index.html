@@ -283,9 +283,16 @@
         </div>
 
         <figure class="hosting-showcase reveal">
-          <img src="assets/HostingServices.png" alt="Your site, hosted at the center, surrounded by everything we manage behind the scenes: backups &amp; recovery, SSL/TLS certificates, DNS management, domain registration, form creation, website building services, content delivery (CDN), database services, cloud hosting, web application firewall, API integration, security monitoring, and email management." loading="lazy">
+          <button type="button" class="hosting-showcase__trigger" data-dialog="dialog-hosting-image" aria-label="View full-size image">
+            <img src="assets/HostingServices.png" alt="Your site, hosted at the center, surrounded by everything we manage behind the scenes: backups &amp; recovery, SSL/TLS certificates, DNS management, domain registration, form creation, website building services, content delivery (CDN), database services, cloud hosting, web application firewall, API integration, security monitoring, and email management." loading="lazy">
+          </button>
         </figure>
       </div>
+
+      <dialog class="image-dialog" id="dialog-hosting-image">
+        <button type="button" class="image-dialog__close" aria-label="Close">&times;</button>
+        <img src="assets/HostingServices.png" alt="Your site, hosted at the center, surrounded by everything we manage behind the scenes: backups &amp; recovery, SSL/TLS certificates, DNS management, domain registration, form creation, website building services, content delivery (CDN), database services, cloud hosting, web application firewall, API integration, security monitoring, and email management.">
+      </dialog>
 
       <div class="pricing-grid pricing-grid--three">
 
