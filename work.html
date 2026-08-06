@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme');
+      var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+<title>Our Work | Kinetic Edge Design</title>
+<meta name="description" content="See real websites Kinetic Edge Design has built for clients, plus what they have to say about working with us.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20260805-18">
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow bg-glow--one" aria-hidden="true"></div>
+<div class="bg-glow bg-glow--two" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Kinetic Edge Design home">
+      <img class="brand-logo brand-logo--light" src="assets/logo/kinetic-edge-logo-transparent.png" alt="Kinetic Edge Design" height="34">
+      <img class="brand-logo brand-logo--dark" src="assets/logo/kinetic-edge-logo-dark-transparent.png" alt="Kinetic Edge Design" height="34">
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html#services">Websites</a>
+      <a href="index.html#hosting">Hosting</a>
+      <a href="work.html" aria-current="page">Our Work</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="index.html#contact" class="btn btn--primary btn--sm">Get Started</a>
+      <button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-checked="true" aria-label="Switch to light mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="theme-toggle__thumb" aria-hidden="true"></span>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/>
+        </svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- PAGE INTRO -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Our Work</p>
+        <h1>Real businesses. Real websites.</h1>
+        <p class="section-lede">A look at sites we've built, and what clients have to say about working with us.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section section--alt" id="portfolio">
+    <div class="container">
+      <div class="portfolio-grid">
+
+        <article class="portfolio-card reveal">
+          <figure class="portfolio-card__shot">
+            <button type="button" class="portfolio-card__trigger" data-dialog="dialog-work-alford" aria-label="View full-size screenshot">
+              <img src="assets/AlfordAccounting.png" alt="Alford Accounting Services homepage, featuring the headline &quot;Life is going to happen. Let's make sure you're ready.&quot;" loading="lazy">
+            </button>
+          </figure>
+          <div class="portfolio-card__body">
+            <p class="portfolio-card__tag">Client Project</p>
+            <h3>Alford Accounting Services</h3>
+            <p>A custom site for a personal budgeting &amp; bookkeeping practice &mdash; built around a warm, judgment-free tone, with clear calls to action to book a free call or start a conversation.</p>
+            <a href="https://alfordaccountingservices.com" class="portfolio-card__link" target="_blank" rel="noopener">Visit site &rarr;</a>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal">
+          <figure class="portfolio-card__shot">
+            <button type="button" class="portfolio-card__trigger" data-dialog="dialog-work-chris" aria-label="View full-size screenshot">
+              <img class="portfolio-card__shot-img portfolio-card__shot-img--light" src="assets/ChrisWeatherford-light.png" alt="chrisweatherford.com homepage in light mode, featuring the headline &quot;Turning technology strategy into business outcomes.&quot;" loading="lazy">
+              <img class="portfolio-card__shot-img portfolio-card__shot-img--dark" src="assets/ChrisWeatherford-dark.png" alt="chrisweatherford.com homepage in dark mode, featuring the headline &quot;Turning technology strategy into business outcomes.&quot;" loading="lazy">
+            </button>
+          </figure>
+          <div class="portfolio-card__body">
+            <p class="portfolio-card__tag">Personal Site</p>
+            <h3>chrisweatherford.com</h3>
+            <p>A personal portfolio &amp; resume site for an IT executive with 25 years of enterprise leadership experience, complete with its own light/dark mode toggle, project highlights, and links to LinkedIn, GitHub, and a downloadable resume.</p>
+            <a href="https://chrisweatherford.com" class="portfolio-card__link" target="_blank" rel="noopener">Visit site &rarr;</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+
+    <dialog class="image-dialog" id="dialog-work-alford">
+      <button type="button" class="image-dialog__close" aria-label="Close">&times;</button>
+      <img src="assets/AlfordAccounting.png" alt="Alford Accounting Services homepage, featuring the headline &quot;Life is going to happen. Let's make sure you're ready.&quot;">
+    </dialog>
+
+    <dialog class="image-dialog" id="dialog-work-chris">
+      <button type="button" class="image-dialog__close" aria-label="Close">&times;</button>
+      <img class="portfolio-card__shot-img portfolio-card__shot-img--light" src="assets/ChrisWeatherford-light.png" alt="chrisweatherford.com homepage in light mode">
+      <img class="portfolio-card__shot-img portfolio-card__shot-img--dark" src="assets/ChrisWeatherford-dark.png" alt="chrisweatherford.com homepage in dark mode">
+    </dialog>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Testimonials</p>
+        <h2>What clients are saying</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card testimonial-card--placeholder reveal">
+          <p class="testimonial-card__quote">We're collecting testimonials from clients like Alford Accounting Services &mdash; check back soon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container cta-banner__inner reveal">
+      <h2>Want a site like this for your business?</h2>
+      <p>Let's talk about the right website and hosting plan for where your business is headed.</p>
+      <a href="index.html#contact" class="btn btn--primary btn--lg">Start the Conversation</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img class="brand-logo brand-logo--light" src="assets/logo/kinetic-edge-logo-transparent.png" alt="Kinetic Edge Design" height="30">
+      <img class="brand-logo brand-logo--dark" src="assets/logo/kinetic-edge-logo-dark-transparent.png" alt="Kinetic Edge Design" height="30">
+      <p>Modern websites. Managed hosting. Moving business forward.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html#services">Websites</a>
+      <a href="index.html#hosting">Hosting</a>
+      <a href="work.html">Our Work</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="footer-meta">
+      <p>kineticedge.design</p>
+      <p>info@kineticedge.design</p>
+      <p>&copy; <span id="year"></span> Kinetic Edge Design. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=20260805-10"></script>
+</body>
+</html>
