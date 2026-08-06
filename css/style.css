@@ -559,6 +559,10 @@ html.has-js .theme-toggle { display: inline-flex; }
   to { stroke-dashoffset: -1000; }
 }
 
+@keyframes flow-dash {
+  to { background-position: 24px 0; }
+}
+
 /* ---------------- Trust strip ---------------- */
 
 .trust-strip {
@@ -1003,13 +1007,33 @@ html.has-js .theme-toggle { display: inline-flex; }
 /* ---------------- Process ---------------- */
 
 .process-grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 24px;
   counter-reset: step;
 }
+/* A dashed connector threading the 5 steps together, echoing the
+   hero's kinetic-path motif. It sits at the vertical center of each
+   step's number badge (30px padding + half the badge's 34px height)
+   and runs the full width of the grid; the steps' opaque backgrounds
+   naturally mask it everywhere except the gaps between cards, so it
+   reads as a line running "through" the sequence via each gutter. */
+.process-grid::before {
+  content: "";
+  position: absolute;
+  top: 47px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-image: repeating-linear-gradient(to right, var(--blue) 0 10px, transparent 10px 24px);
+  opacity: 0.5;
+  background-size: 24px 2px;
+  animation: flow-dash 1.4s linear infinite;
+}
 .process-step {
   position: relative;
+  z-index: 1;
   padding: 30px 24px 24px;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -1217,6 +1241,7 @@ html.has-js .reveal.is-visible {
   html { scroll-behavior: auto; }
   html.has-js .reveal { opacity: 1; transform: none; transition: none; }
   .kinetic-path { animation: none; }
+  .process-grid::before { animation: none; }
 }
 
 /* ---------------- Responsive ---------------- */
@@ -1225,6 +1250,7 @@ html.has-js .reveal.is-visible {
   .pricing-grid,
   .pricing-grid--three { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid::before { display: none; }
 }
 
 @media (max-width: 900px) {
