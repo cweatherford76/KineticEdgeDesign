@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260805-12">
+<link rel="stylesheet" href="css/style.css?v=20260805-13">
 </head>
 <body>
 
@@ -129,15 +129,28 @@
   <!-- SERVICES / WEBSITE PACKAGES -->
   <section class="section" id="services">
     <div class="container">
-      <div class="section-head reveal">
-        <p class="eyebrow">Website Design</p>
-        <h2>Choose the site that fits your business today</h2>
-        <p class="section-lede">Every package includes a custom, mobile-friendly build — no templates dressed up as design. As your business grows, it's easy to move up a tier.</p>
-        <div class="offer-banner">
-          <span class="offer-banner-dot" aria-hidden="true"></span>
-          Save 50% on any website package with a 12-month hosting plan
+      <div class="design-intro">
+        <figure class="design-showcase reveal">
+          <button type="button" class="design-showcase__trigger" data-dialog="dialog-design-image" aria-label="View full-size image">
+            <img src="assets/WebDesign.png" alt="A laptop showing a code editor and a live website preview side by side, representing custom website design and development." loading="lazy">
+          </button>
+        </figure>
+
+        <div class="section-head reveal">
+          <p class="eyebrow">Website Design</p>
+          <h2>Choose the site that fits your business today</h2>
+          <p class="section-lede">Every package includes a custom, mobile-friendly build — no templates dressed up as design. As your business grows, it's easy to move up a tier.</p>
+          <div class="offer-banner">
+            <span class="offer-banner-dot" aria-hidden="true"></span>
+            Save 50% on any website package with a 12-month hosting plan
+          </div>
         </div>
       </div>
+
+      <dialog class="image-dialog" id="dialog-design-image">
+        <button type="button" class="image-dialog__close" aria-label="Close">&times;</button>
+        <img src="assets/WebDesign.png" alt="A laptop showing a code editor and a live website preview side by side, representing custom website design and development.">
+      </dialog>
 
       <div class="pricing-grid">
 

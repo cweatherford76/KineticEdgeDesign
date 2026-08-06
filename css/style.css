@@ -621,6 +621,46 @@ html.has-js .theme-toggle { display: inline-flex; }
   flex-shrink: 0;
 }
 
+.design-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 56px;
+}
+.design-intro .section-head {
+  max-width: none;
+  margin: 0;
+  text-align: left;
+}
+.design-intro .offer-banner { margin-left: 0; }
+
+/* Unlike the hosting graphic, this is a straight photo with no baked-in
+   mat, so it bleeds to the edge of a plain rounded, shadowed frame. */
+.design-showcase {
+  max-width: 440px;
+  justify-self: center;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-glow);
+}
+.design-showcase img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.design-showcase__trigger {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: zoom-in;
+}
+.design-showcase__trigger img { transition: opacity 0.2s var(--ease); }
+.design-showcase__trigger:hover img { opacity: 0.85; }
+
 .hosting-intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1187,8 +1227,11 @@ html.has-js .reveal.is-visible {
 @media (max-width: 900px) {
   .about-grid,
   .contact-grid,
-  .hosting-intro { grid-template-columns: 1fr; gap: 40px; }
-  .hosting-intro .section-head { text-align: center; }
+  .hosting-intro,
+  .design-intro { grid-template-columns: 1fr; gap: 40px; }
+  .hosting-intro .section-head,
+  .design-intro .section-head { text-align: center; }
+  .design-intro .offer-banner { margin-left: auto; }
 }
 
 @media (max-width: 780px) {
