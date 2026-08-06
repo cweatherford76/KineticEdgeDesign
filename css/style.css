@@ -635,19 +635,22 @@ html.has-js .theme-toggle { display: inline-flex; }
 }
 .design-intro .offer-banner { margin-left: 0; }
 
-/* Unlike the hosting graphic, this is a straight photo with no baked-in
-   mat, so it bleeds to the edge of a plain rounded, shadowed frame. */
+/* Same framed-panel treatment as .hosting-showcase: a fixed white mat
+   regardless of theme, so it reads as an intentional frame rather than
+   bleeding into the page. */
 .design-showcase {
-  max-width: 440px;
+  max-width: 380px;
   justify-self: center;
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
   box-shadow: var(--shadow-glow);
 }
 .design-showcase img {
-  display: block;
   width: 100%;
   height: auto;
+  border-radius: var(--radius-md);
 }
 
 .design-showcase__trigger {
