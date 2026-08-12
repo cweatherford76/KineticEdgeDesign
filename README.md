@@ -94,6 +94,12 @@ rules, so they stay theme-aware automatically.
   "basic monthly update," backup retention by hosting tier, and the
   precise limits on Premium's monthly updates/seasonal refreshes. Worth
   finalizing these with the client before launch.
+- **Hosting pricing, especially Premium ($200/mo)** — Premium's scope
+  (monthly check-in, up to 3 content/design updates, same-business-day
+  priority response, third-party integration oversight) is a lot for
+  the price; it was left as-is intentionally to get real client hours
+  logged first. Revisit once there's a few months of actual time data
+  to see whether $200/mo holds up, rather than guessing again.
 - **Hosting package feature lists** (`index.html`, both the pricing-grid
   cards and the matching `dialog-hosting-*` popups): Standard now
   includes a quarterly live check-in in addition to its monthly response
