@@ -594,6 +594,12 @@ html.has-js .theme-toggle { display: inline-flex; }
 .section { padding: 112px 0; position: relative; }
 .section--alt { background: linear-gradient(180deg, transparent, var(--bg-alt) 8%, var(--bg-alt) 92%, transparent); }
 
+/* Secondary pages' intro section reuses the hero's animated kinetic-path
+   lines; overflow:hidden clips them the same way .hero does, without
+   affecting other .section instances that rely on visible overflow for
+   hover lift/glow effects. */
+.page-hero { overflow: hidden; }
+
 .section-head {
   max-width: 640px;
   margin: 0 auto 56px;
@@ -1109,20 +1115,6 @@ html.has-js .theme-toggle { display: inline-flex; }
   margin-bottom: 6px;
 }
 .about-item p { font-size: 0.9rem; margin-bottom: 0; }
-
-/* ---------------- Compare callout (Custom Applications page) ---------------- */
-
-.compare-callout {
-  max-width: 780px;
-  margin: 56px auto 0;
-  padding: 24px 28px;
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--blue);
-  border-radius: var(--radius-md);
-  background: var(--surface);
-}
-.compare-callout h2 { font-size: 1.05rem; margin-bottom: 8px; }
-.compare-callout p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0; }
 
 /* ---------------- Portfolio (Our Work page) ---------------- */
 
