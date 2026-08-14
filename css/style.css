@@ -1114,7 +1114,7 @@ html.has-js .theme-toggle { display: inline-flex; }
 
 .compare-callout {
   max-width: 780px;
-  margin: 0 auto 8px;
+  margin: 56px auto 0;
   padding: 24px 28px;
   border: 1px solid var(--border);
   border-left: 3px solid var(--blue);
