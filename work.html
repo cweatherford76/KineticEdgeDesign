@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260805-21">
+<link rel="stylesheet" href="css/style.css?v=20260805-23">
 </head>
 <body>
 
@@ -92,6 +92,20 @@
 
         <article class="portfolio-card reveal">
           <figure class="portfolio-card__shot">
+            <button type="button" class="portfolio-card__trigger" data-dialog="dialog-work-nonprofit" aria-label="View full-size screenshot">
+              <img src="assets/Non-Profit%20Management%20Hub.png" alt="Nonprofit Management Hub reports dashboard, showing engagement score distribution, top engaged contacts, and at-risk donors with sample data." loading="lazy">
+            </button>
+          </figure>
+          <div class="portfolio-card__body">
+            <p class="portfolio-card__tag">Custom Application</p>
+            <h3>Nonprofit Management Hub</h3>
+            <p>A donor CRM and fundraising operations platform for small nonprofits, designed and tested with Lori's Voice. Donor management, donation tracking, AI-assisted thank-you letters, and lapsed-donor reporting, built as a template that can be stood up for other organizations.</p>
+            <a href="https://www.lorisvoice.org" class="portfolio-card__link" target="_blank" rel="noopener">Visit Lori's Voice &rarr;</a>
+          </div>
+        </article>
+
+        <article class="portfolio-card reveal">
+          <figure class="portfolio-card__shot">
             <button type="button" class="portfolio-card__trigger" data-dialog="dialog-work-alford" aria-label="View full-size screenshot">
               <img src="assets/AlfordAccounting.png" alt="Alford Accounting Services homepage, featuring the headline &quot;Life is going to happen. Let's make sure you're ready.&quot;" loading="lazy">
             </button>
@@ -121,6 +135,11 @@
 
       </div>
     </div>
+
+    <dialog class="image-dialog" id="dialog-work-nonprofit">
+      <button type="button" class="image-dialog__close" aria-label="Close">&times;</button>
+      <img src="assets/Non-Profit%20Management%20Hub.png" alt="Nonprofit Management Hub reports dashboard, showing engagement score distribution, top engaged contacts, and at-risk donors with sample data.">
+    </dialog>
 
     <dialog class="image-dialog" id="dialog-work-alford">
       <button type="button" class="image-dialog__close" aria-label="Close">&times;</button>

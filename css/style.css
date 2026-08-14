@@ -1120,7 +1120,7 @@ html.has-js .theme-toggle { display: inline-flex; }
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
 }
 .portfolio-card {
@@ -1223,10 +1223,6 @@ img.portfolio-card__shot-img--dark { display: none; }
   font-style: normal;
 }
 .testimonial-card--placeholder { border-style: dashed; text-align: center; }
-
-@media (max-width: 900px) {
-  .portfolio-grid { grid-template-columns: 1fr; }
-}
 
 /* ---------------- CTA banner ---------------- */
 
@@ -1367,7 +1363,8 @@ html.has-js .reveal.is-visible {
 
 @media (max-width: 1080px) {
   .pricing-grid,
-  .pricing-grid--three { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid--three,
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid::before { display: none; }
 }
@@ -1376,7 +1373,8 @@ html.has-js .reveal.is-visible {
   .about-grid,
   .contact-grid,
   .hosting-intro,
-  .design-intro { grid-template-columns: 1fr; gap: 40px; }
+  .design-intro,
+  .portfolio-grid { grid-template-columns: 1fr; gap: 40px; }
   .hosting-intro .section-head,
   .design-intro .section-head { text-align: center; }
   .design-intro .offer-banner { margin-left: auto; }
