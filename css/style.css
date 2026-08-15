@@ -1161,7 +1161,10 @@ html.has-js .theme-toggle { display: inline-flex; }
 .portfolio-card__trigger img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: top;
   transition: opacity 0.2s var(--ease);
 }
 .portfolio-card__trigger:hover img { opacity: 0.85; }
