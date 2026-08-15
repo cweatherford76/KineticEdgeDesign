@@ -62,7 +62,7 @@ Colors are defined as CSS custom properties at the top of `css/style.css`:
 |---|---|---|
 | `--blue` | `#009cfe` | Primary accent — links, highlights, gradients |
 | `--navy` | `#1a2732` | Primary text, buttons, headings |
-| `--yellow` | `#ffdb2b` | Sparing accent only — "Most Popular" tags, the trust-strip star icon, the capacity-badge dot, the offer callout |
+| `--yellow` | `#ffdb2b` | Sparing accent only — "Most Popular" tags, the trust-strip star icon, the offer callout |
 | `--bg` / `--bg-alt` | `#ffffff` / `#f1f6ff` | Page background / alternating section tint |
 
 Logo source files live in `assets/logo/`. Use the transparent version on
@@ -84,10 +84,6 @@ rules, so they stay theme-aware automatically.
 
 ## Content that needs periodic upkeep
 
-- **Hero capacity badge** (`index.html`, marked `<!-- UPDATE PERIODICALLY -->`
-  just above it): states current project backlog ("1–2 weeks"). Update this
-  whenever actual turnaround time changes — a stale claim here undercuts
-  the trust the rest of the site is built on.
 - **Pricing page copy** — the original brand brief flagged several things
   to pin down before pricing goes fully public: number of revisions
   included per package, deposit/final payment split, exact scope of a
