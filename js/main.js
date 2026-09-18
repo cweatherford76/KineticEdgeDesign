@@ -148,7 +148,8 @@
     'dialog-personal-site': 'dialog-hosting-personal',
     'dialog-basic': 'dialog-hosting-standard',
     'dialog-intermediate': 'dialog-hosting-premium',
-    'dialog-advanced': 'dialog-hosting-premium'
+    'dialog-advanced': 'dialog-hosting-premium',
+    'nonprofit-hub': 'dialog-hosting-premium'
   };
 
   function setSelectByPackageId(select, packageId) {
@@ -172,6 +173,16 @@
       if (recommended) setSelectByPackageId(hostingPackageSelect, recommended);
     });
   });
+
+  // Subpages (Custom Apps, Nonprofit Hub) link to the contact form with
+  // ?package=...&hosting=... so the dropdowns arrive preselected, e.g.
+  // index.html?package=nonprofit-hub&hosting=dialog-hosting-premium#contact
+  // Values are the options' data-package-id; unknown values are ignored.
+  try {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('package')) setSelectByPackageId(designPackageSelect, params.get('package'));
+    if (params.get('hosting')) setSelectByPackageId(hostingPackageSelect, params.get('hosting'));
+  } catch (e) {}
 
   // Contact form — submit via fetch so the visitor stays on the page
   // instead of being redirected to Formspree. Falls back to a normal

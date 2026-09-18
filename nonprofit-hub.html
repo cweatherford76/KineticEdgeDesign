@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+  (function () {
+    try {
+      var stored = localStorage.getItem('theme');
+      var theme = stored === 'light' || stored === 'dark' ? stored : 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    } catch (e) {}
+  })();
+</script>
+<title>Nonprofit Management Hub | Donor &amp; Volunteer Management for Small Nonprofits | Kinetic Edge Design</title>
+<meta name="description" content="Nonprofit Management Hub is a donor CRM and volunteer management platform built for small nonprofits. Track gifts, send receipts, run campaigns, manage volunteers, and keep every supporter relationship in one place.">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="512x512" href="assets/favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=20260918-3">
+</head>
+<body>
+
+<div class="bg-grid" aria-hidden="true"></div>
+<div class="bg-glow bg-glow--one" aria-hidden="true"></div>
+<div class="bg-glow bg-glow--two" aria-hidden="true"></div>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="index.html" class="brand" aria-label="Kinetic Edge Design home">
+      <img class="brand-logo brand-logo--light" src="assets/logo/kinetic-edge-logo-transparent.png" alt="Kinetic Edge Design" height="34">
+      <img class="brand-logo brand-logo--dark" src="assets/logo/kinetic-edge-logo-dark-transparent.png" alt="Kinetic Edge Design" height="34">
+    </a>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html#services">Websites</a>
+      <a href="index.html#hosting">Hosting</a>
+      <a href="custom-applications.html">Custom Apps</a>
+      <a href="nonprofit-hub.html" aria-current="page">Nonprofit Hub</a>
+      <a href="work.html">Our Work</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="index.html?package=nonprofit-hub&amp;hosting=dialog-hosting-premium#contact" class="btn btn--primary btn--sm">Get Started</a>
+      <button class="theme-toggle" id="themeToggle" type="button" role="switch" aria-checked="true" aria-label="Switch to light mode">
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.5"/>
+          <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+        </svg>
+        <span class="theme-toggle__thumb" aria-hidden="true"></span>
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/>
+        </svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- PAGE INTRO -->
+  <section class="section page-hero">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Nonprofit Management Hub</p>
+        <h1>Donor management built for nonprofits that are tired of managing everything in spreadsheets.</h1>
+        <p class="section-lede">Nonprofit Management Hub keeps your donors, gifts, volunteers, and campaigns in one place, sends the receipts and reminders for you, and shows you who's drifting away before they're gone. Built with working nonprofits, priced for small ones.</p>
+        <div class="hero-actions">
+          <a href="index.html?package=nonprofit-hub&amp;hosting=dialog-hosting-premium#contact" class="btn btn--primary">Request a Demo</a>
+          <a href="#included" class="btn btn--ghost">See What's Included</a>
+        </div>
+      </div>
+    </div>
+
+    <svg class="hero-lines" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true">
+      <path class="kinetic-path kinetic-path--a" d="M-50 220 C 200 180, 350 260, 600 190 S 950 90, 1250 150" />
+      <path class="kinetic-path kinetic-path--b" d="M-50 260 C 250 240, 400 300, 650 240 S 1000 160, 1250 210" />
+      <path class="kinetic-path kinetic-path--c" d="M-50 180 C 180 140, 380 200, 620 130 S 980 40, 1250 100" />
+    </svg>
+  </section>
+
+  <!-- WHAT IT DOES -->
+  <section class="section section--alt" id="what-it-does">
+    <div class="container about-grid">
+      <div class="about-list reveal">
+        <div class="about-item">
+          <h4>Donors and gifts in one record</h4>
+          <p>Every contact, every gift, every note, every thank-you. Recurring giving, deposits, and year-end statements included, so nothing lives in a spreadsheet on someone's laptop.</p>
+        </div>
+        <div class="about-item">
+          <h4>Volunteers, from sign-up to check-in</h4>
+          <p>Post opportunities, set roles and capacity, repeat weekly events, and let volunteers check in by scanning a QR code at the door. Reminders go out automatically.</p>
+        </div>
+        <div class="about-item">
+          <h4>A supporter portal</h4>
+          <p>Donors and volunteers get their own login to see giving history, download receipts, sign up for events, and update their contact info. Fewer emails to your office.</p>
+        </div>
+        <div class="about-item">
+          <h4>Reports that answer the real question</h4>
+          <p>Who gave last year but not this year? Who's overdue for a call? Which campaign is actually working? Built-in LYBUNT and SYBUNT reports, year-end summaries, and exports.</p>
+        </div>
+      </div>
+
+      <div class="about-copy reveal">
+        <p class="eyebrow">What It Does</p>
+        <h2>One place for everything a small nonprofit runs on.</h2>
+        <p>
+          Most small nonprofits run on a donor spreadsheet, a volunteer
+          sign-up form, a stack of receipts to mail, and a memory of who
+          still needs a thank-you call. The Hub replaces that with a single
+          system that already knows how those pieces fit together.
+        </p>
+        <p>
+          It was built alongside a working nonprofit, one real request at a
+          time, so it covers what a two-person organization actually does
+          every week instead of what an enterprise sales deck says you
+          should be doing.
+        </p>
+        <figure class="hosting-showcase">
+          <button type="button" class="hosting-showcase__trigger" data-dialog="dialog-hub-image" aria-label="View full-size screenshot">
+            <img src="assets/Non-Profit%20Management%20Hub.png" alt="Nonprofit Management Hub reports dashboard, showing engagement score distribution, top engaged contacts, and at-risk donors with sample data." loading="lazy">
+          </button>
+        </figure>
+      </div>
+    </div>
+
+    <dialog class="image-dialog" id="dialog-hub-image">
+      <button type="button" class="image-dialog__close" aria-label="Close">&times;</button>
+      <img src="assets/Non-Profit%20Management%20Hub.png" alt="Nonprofit Management Hub reports dashboard, showing engagement score distribution, top engaged contacts, and at-risk donors with sample data.">
+    </dialog>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="section" id="included">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">What's Included</p>
+        <h2>Everything a small nonprofit needs</h2>
+        <p class="section-lede">Not a stripped-down version of enterprise software. A full platform scoped to how a real nonprofit actually works but can be customized for your needs.</p>
+      </div>
+
+      <div class="pricing-grid pricing-grid--three">
+
+        <article class="price-card reveal">
+          <div class="price-card__head">
+            <h3>Donor management</h3>
+            <p class="price-card__blurb">The complete record, not just a name and an amount.</p>
+          </div>
+          <ul class="feature-list">
+            <li>Contact records with giving history, relationships, VIP flags, and points of contact</li>
+            <li>Duplicate detection when contacts are imported or entered twice</li>
+            <li>One-time and recurring gifts, with net amounts after processor fees</li>
+            <li>Deposit tracking against your bank accounts</li>
+            <li>PDF receipts and year-end tax statements generated automatically</li>
+            <li>Thank-you preferences per donor, so the right people get a letter and the rest get an email</li>
+          </ul>
+        </article>
+
+        <article class="price-card reveal">
+          <div class="price-card__head">
+            <h3>Gifts from where they already happen</h3>
+            <p class="price-card__blurb">Keep the donation tools and fees you already have.</p>
+          </div>
+          <ul class="feature-list">
+            <li>Import donations from PayPal, Venmo, Benevity, and Givebutter</li>
+            <li>Bulk-import contacts and gift history from a spreadsheet</li>
+            <li>A branded public donor page that points supporters to wherever you collect payments today</li>
+            <li>The Hub is a CRM, not a payment processor. Nothing changes about how money reaches you.</li>
+          </ul>
+        </article>
+
+        <article class="price-card reveal">
+          <div class="price-card__head">
+            <h3>Campaigns &amp; sponsorships</h3>
+            <p class="price-card__blurb">See what each effort actually brings in.</p>
+          </div>
+          <ul class="feature-list">
+            <li>Campaigns with goals, linked gifts, and linked volunteer events</li>
+            <li>Sponsorship levels for business supporters</li>
+            <li>A sponsor portal so sponsors can see their own commitments</li>
+            <li>Announcements to everyone with a portal login</li>
+          </ul>
+        </article>
+
+        <article class="price-card reveal">
+          <div class="price-card__head">
+            <h3>Volunteers</h3>
+            <p class="price-card__blurb">From the first sign-up to the day of the event.</p>
+          </div>
+          <ul class="feature-list">
+            <li>Opportunities with named roles, capacity limits, and waitlists</li>
+            <li>Weekly recurring events created in one step</li>
+            <li>Email invites with one-click yes or no, no login required</li>
+            <li>QR-code check-in kiosk for the day of the event</li>
+            <li>Two-stage shift reminder emails</li>
+            <li>Volunteer engagement scoring and a volunteers-who-also-give report</li>
+          </ul>
+        </article>
+
+        <article class="price-card reveal">
+          <div class="price-card__head">
+            <h3>Cultivation &amp; communications</h3>
+            <p class="price-card__blurb">Keep major relationships moving and the writing done.</p>
+          </div>
+          <ul class="feature-list">
+            <li>A moves-management pipeline for major-gift prospects</li>
+            <li>Next-action dates with overdue flags so no relationship goes quiet by accident</li>
+            <li>AI-assisted drafts for thank-you emails, appeals, newsletters, formal letters, and social posts</li>
+            <li>Written in your organization's voice from a mission statement you control</li>
+          </ul>
+        </article>
+
+        <article class="price-card reveal">
+          <div class="price-card__head">
+            <h3>Security &amp; control</h3>
+            <p class="price-card__blurb">Your donor data stays yours.</p>
+          </div>
+          <ul class="feature-list">
+            <li>Two-factor authentication, with the option to require it for staff</li>
+            <li>Four staff roles: admin, contact manager, cultivation manager, and read-only viewer</li>
+            <li>Full audit log of who changed what</li>
+            <li>Each organization runs on its own isolated database. Your donor data is never in a shared tenant with anyone else's.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section section--alt" id="pricing">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Pricing</p>
+        <h2>Priced like an affordable project, not enterprise software.</h2>
+        <p class="section-lede">Setup is scoped the way an Intermediate website is: a conversation first, then a fixed quote based on how much customization your organization needs.</p>
+        <div class="offer-banner">
+          <span class="offer-banner-dot" aria-hidden="true"></span>
+          Save 50% on setup with a 12-month Premium hosting plan
+        </div>
+      </div>
+
+      <div class="pricing-grid pricing-grid--two">
+
+        <article class="price-card reveal">
+          <div class="price-card__head">
+            <h3>Setup &amp; Customization</h3>
+            <p class="price-card__blurb">Quoted after a discovery call.</p>
+          </div>
+          <p class="price"><span class="price-period">from </span><span class="price-amount">$2,400</span></p>
+          <ul class="feature-list">
+            <li>Your own isolated instance, branded for your organization</li>
+            <li>Import of contacts and gift history from a spreadsheet or your current processor</li>
+            <li>Staff accounts, roles, and two-factor setup</li>
+            <li>Donor page, receipts, and email sender configured</li>
+            <li>Customization to fit how your organization already works</li>
+            <li>Training for your staff before go-live</li>
+          </ul>
+          <a href="index.html?package=nonprofit-hub&amp;hosting=dialog-hosting-premium#contact" class="btn btn--outline">Request a Quote</a>
+        </article>
+
+        <article class="price-card price-card--featured reveal">
+          <p class="price-card__tag">Included Hosting</p>
+          <div class="price-card__head">
+            <h3>Premium Hosting</h3>
+            <p class="price-card__blurb">Required for the Hub. The same Premium plan as our websites.</p>
+          </div>
+          <p class="price"><span class="price-amount">$200</span><span class="price-period">/month</span></p>
+          <ul class="feature-list">
+            <li>Isolated database with backups and longer retention</li>
+            <li>Proactive security patching and vulnerability fixes</li>
+            <li>Unlimited staff users and unlimited contacts</li>
+            <li>Priority response time: same business day</li>
+            <li>Emergency issue triage</li>
+            <li>Monthly live virtual check-in</li>
+            <li>Up to 5 professional email addresses on your domain</li>
+            <li>Ongoing feature updates as the Hub grows</li>
+            <li>Annual prepay available for organizations that budget by grant cycle</li>
+          </ul>
+          <a href="index.html?package=nonprofit-hub&amp;hosting=dialog-hosting-premium#contact" class="btn btn--primary">Request a Demo</a>
+        </article>
+
+      </div>
+
+      <p class="pricing-footnote reveal">The first organizations onboarded get founding-partner pricing in exchange for feedback and a case study. Ask.</p>
+    </div>
+  </section>
+
+  <!-- BUILT WITH A REAL NONPROFIT -->
+  <section class="section" id="built-with">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Built With a Real Nonprofit</p>
+        <h2>Designed and tested with Lori's Voice</h2>
+        <p class="section-lede">
+          Nonprofit Management Hub started as a custom build for
+          <a href="https://www.lorisvoice.org" target="_blank" rel="noopener">Lori's Voice</a>
+          and has been in daily use there since. Every feature on this page
+          came from a real request: a receipt that needed to go out, a
+          volunteer event that needed a sign-up sheet, a donor who quietly
+          stopped giving.
+        </p>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card testimonial-card--placeholder reveal">
+          <p class="testimonial-card__quote">We're collecting testimonials from the organizations using the Hub. Check back soon.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container cta-banner__inner reveal">
+      <h2>See it with your own data</h2>
+      <p>A 30-minute walkthrough, then we import a sample of your contacts and gifts so you can see how your organization looks inside it. No commitment.</p>
+      <a href="index.html?package=nonprofit-hub&amp;hosting=dialog-hosting-premium#contact" class="btn btn--primary btn--lg">Request a Demo</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img class="brand-logo brand-logo--light" src="assets/logo/kinetic-edge-logo-transparent.png" alt="Kinetic Edge Design" height="30">
+      <img class="brand-logo brand-logo--dark" src="assets/logo/kinetic-edge-logo-dark-transparent.png" alt="Kinetic Edge Design" height="30">
+      <p>Modern websites. Managed hosting. Moving business forward.</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="index.html#services">Websites</a>
+      <a href="index.html#hosting">Hosting</a>
+      <a href="custom-applications.html">Custom Apps</a>
+      <a href="nonprofit-hub.html">Nonprofit Hub</a>
+      <a href="work.html">Our Work</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+
+    <div class="footer-meta">
+      <p>kineticedge.design</p>
+      <p>info@kineticedge.design</p>
+      <p>&copy; <span id="year"></span> Kinetic Edge Design. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js?v=20260918-1"></script>
+</body>
+</html>

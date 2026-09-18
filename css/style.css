@@ -300,8 +300,19 @@ button { font: inherit; cursor: pointer; }
 
 .main-nav {
   display: flex;
-  gap: 32px;
+  gap: 26px;
   margin: 0 auto;
+}
+.main-nav a { white-space: nowrap; }
+.main-nav a + a::before {
+  content: "";
+  position: absolute;
+  left: -13px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: var(--border);
 }
 .main-nav a {
   font-size: 0.92rem;
@@ -566,6 +577,9 @@ html.has-js .theme-toggle { display: inline-flex; }
 .section-head h1,
 .section-head h2 { font-size: clamp(1.8rem, 3.4vw, 2.5rem); }
 .section-lede { font-size: 1.05rem; }
+.section-lede a { text-decoration: underline; text-underline-offset: 3px; }
+.page-hero .hero-actions { justify-content: center; margin: 28px 0 0; }
+.about-copy .hosting-showcase { max-width: 100%; margin-top: 28px; }
 
 .offer-banner {
   display: flex;
@@ -745,6 +759,7 @@ html.has-js .theme-toggle { display: inline-flex; }
   gap: 20px;
 }
 .pricing-grid--three { grid-template-columns: repeat(3, 1fr); }
+.pricing-grid--two { grid-template-columns: repeat(2, 1fr); max-width: 800px; margin: 0 auto; }
 
 .price-card {
   position: relative;
@@ -1323,6 +1338,9 @@ html.has-js .reveal.is-visible {
 /* ---------------- Responsive ---------------- */
 
 @media (max-width: 1080px) {
+  .main-nav { gap: 16px; }
+  .main-nav a { font-size: 0.86rem; }
+  .main-nav a + a::before { left: -8px; }
   .pricing-grid,
   .pricing-grid--three,
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1341,7 +1359,7 @@ html.has-js .reveal.is-visible {
   .design-intro .offer-banner { margin-left: auto; }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1000px) {
   .main-nav {
     position: absolute;
     top: var(--header-h);
@@ -1363,6 +1381,7 @@ html.has-js .reveal.is-visible {
     pointer-events: auto;
   }
   .main-nav a { padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .main-nav a + a::before { display: none; }
   .main-nav a:last-child { border-bottom: none; }
   .header-actions .btn--sm { display: none; }
   .nav-toggle { display: flex; }
@@ -1370,6 +1389,7 @@ html.has-js .reveal.is-visible {
 
 @media (max-width: 640px) {
   .pricing-grid,
+  .pricing-grid--two,
   .pricing-grid--three,
   .process-grid { grid-template-columns: 1fr; }
   .hero { padding: 88px 0 72px; }
