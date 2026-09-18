@@ -1300,6 +1300,7 @@ img.portfolio-card__shot-img--dark { display: none; }
   gap: 32px;
   align-items: start;
 }
+.footer-brand__link { display: inline-block; }
 .footer-brand .brand-logo { height: 30px; }
 .footer-brand p { font-size: 0.9rem; margin-top: 10px; max-width: 260px; }
 .footer-nav { display: grid; grid-template-columns: repeat(2, max-content); column-gap: 40px; row-gap: 12px; }
